@@ -1,0 +1,135 @@
+/* ==================================================
+   ARTICLE REFERENCE CARD
+   ================================================== */
+
+
+/* --------------------------------------------------
+   Card
+   -------------------------------------------------- */
+
+.article-ref-card {
+  margin: 24px 0;
+  padding: 0;
+
+  background: #fcfcfc;
+
+  border: 1px solid #c8ccd1;
+
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------
+   記事番号ヘッダー
+   -------------------------------------------------- */
+
+.article-ref-header {
+  padding: 8px 16px;
+
+  background: #eaecf0;
+
+  border-bottom: 1px solid #c8ccd1;
+
+  color: #202122;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* --------------------------------------------------
+   カードボディ
+   -------------------------------------------------- */
+
+.article-ref-body {
+  display: grid;
+
+  grid-template-columns:
+    180px
+    minmax(0, 1fr);
+
+  column-gap: 20px;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------
+   画像
+   -------------------------------------------------- */
+
+.article-ref-image-link {
+  display: block;
+  grid-column: 1;
+}
+
+.article-ref-image {
+  display: block;
+
+  width: 180px;
+  height: 120px;
+
+  object-fit: cover;
+}
+
+
+/* --------------------------------------------------
+   情報エリア
+   -------------------------------------------------- */
+
+.article-ref-info {
+  grid-column: 2;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------
+   タイトル
+   -------------------------------------------------- */
+
+.article-ref-title {
+  display: block;
+
+  color: var(--color-link);
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  text-decoration: none;
+}
+
+.article-ref-title:hover {
+  text-decoration: underline;
+}
+
+
+/* --------------------------------------------------
+   メタデータ
+   -------------------------------------------------- */
+
+.article-ref-meta {
+  margin-top: 6px;
+
+  color: var(--color-muted);
+
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+
+/* --------------------------------------------------
+   Abstract
+   -------------------------------------------------- */
+
+.article-ref-abstract {
+  margin-top: 8px;
+
+  color: var(--color-text);
+
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
