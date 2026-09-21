@@ -1,98 +1,114 @@
 // reference-preview.js
 
-(function () {
-  'use strict';
-  const providers = new Map ();
+(function(){
+"use strict";
 
-  function register (type, provider) {
-    if (!type || typeof provider !== 'function') return;
-    providers.set (type, provider);
+const providers=new Map();
+
+function register(type,provider){
+  if(!type||typeof provider!=="function")return;
+  providers.set(type,provider);
+}
+
+function buildReferencePreviews(){
+  const core=window.articleReferenceCore;
+
+  if(!core){
+    console.warn("[ReferencePreview] Reference Core not found.");
+    return;
   }
 
-  function buildReferencePreviews () {
-    const core = window.articleReferenceCore;
+  const references=core.getReferences();
 
-    if (!core) {
-      console.warn ('[ReferencePreview] Reference Core not found.');
-      return;
-    }
+  references.forEach(function(reference){
+    const element=reference.element;
+    const target=reference.target;
 
-    const references = core.getReferences ();
+    if(!element||!target||!target.element)return;
+    if(element.closest("[data-reference-preview-content='true']"))return;
+    if(element.dataset.preview!=="true")return;
+    if(element.dataset.previewApplied==="true")return;
 
-    references.forEach (function (reference) {
-      const element = reference.element;
-      const target = reference.target;
+    element.dataset.previewApplied="true";
 
-      if (!element || !target || !target.element) return;
-      if (element.closest ("[data-reference-preview-content='true']")) return;
-      if (element.dataset.preview !== 'true') return;
-      if (element.dataset.previewApplied === 'true') return;
-
-      element.dataset.previewApplied = 'true';
-
-      element.addEventListener ('mouseenter', function () {
-        showPreview (element, target);
-      });
-
-      element.addEventListener ('mouseleave', function () {
-        hidePreview (element);
-      });
+    element.addEventListener("mouseenter",function(){
+      showPreview(element,target);
     });
 
-    window.dispatchEvent (
-      new CustomEvent ('articleReferencePreviewsReady', {detail: references})
-    );
+    element.addEventListener("mouseleave",function(){
+      hidePreview(element);
+    });
+  });
+
+  window.dispatchEvent(
+    new CustomEvent(
+      "articleReferencePreviewsReady",
+      {detail:references}
+    )
+  );
+}
+
+function showPreview(element,target){
+  let preview=element.querySelector(".article-reference-preview");
+
+  if(preview){
+    preview.hidden=false;
+    return;
   }
 
-  function showPreview (element, target) {
-    let preview = element.querySelector ('.article-reference-preview');
+  preview=document.createElement("span");
+  preview.className="article-reference-preview";
 
-    if (preview) {
-      preview.hidden = false;
-      return;
-    }
+  const content=document.createElement("span");
+  content.className="article-reference-preview-content";
+  content.dataset.referencePreviewContent="true";
 
-    preview = document.createElement ('span');
-    preview.className = 'article-reference-preview';
+  const provider=providers.get(target.type);
 
-    const content = document.createElement ('span');
-    content.className = 'article-reference-preview-content';
-    content.dataset.referencePreviewContent = 'true';
-
-    const provider = providers.get (target.type);
-
-    if (provider) {
-      provider (target, content);
-    } else {
-      buildGenericPreview (target, content);
-    }
-
-    preview.appendChild (content);
-    element.appendChild (preview);
+  if(provider){
+    provider(target,content);
+  }else{
+    buildGenericPreview(target,content);
   }
 
-  function buildGenericPreview (target, content) {
-    const label = target.label || '';
+  disablePreviewInteractions(content);
 
-    if (label) {
-      content.textContent = label;
-      return;
-    }
+  preview.appendChild(content);
+  element.appendChild(preview);
+}
 
-    const text = target.element.textContent.replace (/\s+/g, ' ').trim ();
-    content.textContent = text;
+function disablePreviewInteractions(content){
+  content.querySelectorAll("a.article-reference-link").forEach(function(link){
+    link.removeAttribute("href");
+    link.removeAttribute("target");
+    link.removeAttribute("data-linked");
+    link.removeAttribute("data-reference-navigation-applied");
+  });
+}
+
+function buildGenericPreview(target,content){
+  const label=target.label||"";
+
+  if(label){
+    content.textContent=label;
+    return;
   }
 
-  function hidePreview (element) {
-    const preview = element.querySelector ('.article-reference-preview');
+  const text=target.element.textContent.replace(/\s+/g," ").trim();
+  content.textContent=text;
+}
 
-    if (!preview) return;
+function hidePreview(element){
+  const preview=element.querySelector(".article-reference-preview");
 
-    preview.hidden = true;
-  }
+  if(!preview)return;
 
-  window.articleReferencePreview = {
-    register: register,
-    process: buildReferencePreviews,
-  };
-}) ();
+  preview.hidden=true;
+}
+
+window.articleReferencePreview={
+  register:register,
+  process:buildReferencePreviews
+};
+
+})();
