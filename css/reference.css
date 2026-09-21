@@ -1,76 +1,48 @@
 /* ==================================================
-   REFERENCE ENGINE
+   ARTICLE REFERENCES
+   Reference Engine
    ================================================== */
-
-/* --------------------------------------------------
-   Reference Engine Variables
-   -------------------------------------------------- */
-
-:root {
-
-  --reference-section-title-size: 1.1rem;
-  --reference-section-title-weight: 600;
-  --reference-section-title-margin-top: 2.5em;
-  --reference-section-title-margin-bottom: 1em;
-
-  --reference-target-padding-top: 2px;
-  --reference-target-padding-bottom: 2px;
-
-  --reference-target-number-size: 0.8rem;
-  --reference-target-number-margin-right: 4px;
-
-  --reference-link-padding: 2px 4px;
-
-  --reference-preview-width: 320px;
-  --reference-preview-padding: 12px;
-
-  --reference-back-margin-top: 12px;
-
-  --reference-figure-margin-top: 1.5em;
-  --reference-figure-margin-bottom: 1.5em;
-
-  --reference-table-title-size: 0.9rem;
-  --reference-table-title-weight: 600;
-  --reference-table-title-margin-bottom: 6px;
-
-  --reference-number-size: 0.8rem;
-
-  --reference-equation-margin-top: 1.5em;
-  --reference-equation-margin-bottom: 1.5em;
-
-}
-
 
 /* --------------------------------------------------
    References
    -------------------------------------------------- */
 
-.article-references {
-  margin-top: 2.5em;
-}
-
 .article-reference-section-title {
-  margin-top: var(--reference-section-title-margin-top);
-  margin-bottom: var(--reference-section-title-margin-bottom);
+  margin: 0 0 16px;
 
-  font-size: var(--reference-section-title-size);
-  font-weight: var(--reference-section-title-weight);
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  color: var(--color-text);
 }
 
 
 /* --------------------------------------------------
-   Article Target
+   文献・脚注
+   -------------------------------------------------- */
+
+.article-references .article-target {
+  margin: 10px 0;
+  line-height: 1.7;
+}
+
+
+/* --------------------------------------------------
+   Target
    -------------------------------------------------- */
 
 .article-target {
-  padding-top: var(--reference-target-padding-top);
-  padding-bottom: var(--reference-target-padding-bottom);
+  position: relative;
 }
 
-.article-target-number {
-  margin-right: var(--reference-target-number-margin-right);
 
-  font-size: var(--reference-target-number-size);
+/* --------------------------------------------------
+   Target Number
+   -------------------------------------------------- */
+
+.article-target-number {
+  display: inline-block;
+  margin-right: 6px;
 }
 
 
@@ -79,31 +51,91 @@
    -------------------------------------------------- */
 
 .article-ref-link {
-  padding: var(--reference-link-padding);
+  position: relative;
+
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.article-ref-link.is-superscript {
+  vertical-align: super;
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.article-ref-link:hover {
+  text-decoration: underline;
 }
 
 
 /* --------------------------------------------------
-   Reference Preview
+   Reference Hover Preview
    -------------------------------------------------- */
 
-.article-ref-preview {
-  width: var(--reference-preview-width);
-  padding: var(--reference-preview-padding);
+.article-ref-preview,
+.article-reference-preview {
+  position: absolute;
+
+  left: 50%;
+  top: calc(100% + 10px);
+
+  z-index: 1000;
+
+  width: 300px;
+
+  padding: 10px 12px;
+
+  transform: translateX(-50%);
+
+  background: #fff;
+
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+
+  color: var(--color-text);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease;
 }
 
-.article-reference-preview {
-  width: var(--reference-preview-width);
-  padding: var(--reference-preview-padding);
+.article-ref-link:hover .article-ref-preview,
+.article-reference-back:hover .article-reference-preview {
+  opacity: 1;
+  visibility: visible;
+}
+
+.article-ref-link[data-preview="off"] .article-ref-preview {
+  display: none;
 }
 
 
 /* --------------------------------------------------
-   Reference Back
+   Target → 本文
    -------------------------------------------------- */
 
 .article-reference-back {
-  margin-top: var(--reference-back-margin-top);
+  position: relative;
+
+  margin-left: 8px;
+
+  color: var(--color-link);
+  text-decoration: none;
+
+  font-size: 0.85em;
+}
+
+.article-reference-back:hover {
+  text-decoration: underline;
 }
 
 
@@ -112,8 +144,22 @@
    -------------------------------------------------- */
 
 .article-figure {
-  margin-top: var(--reference-figure-margin-top);
-  margin-bottom: var(--reference-figure-margin-bottom);
+  margin: 0;
+}
+
+.article-figure figcaption {
+  margin-top: 8px;
+
+  color: var(--color-muted);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  text-align: left;
+}
+
+.article-figure .article-target-number {
+  margin-right: 6px;
 }
 
 
@@ -122,19 +168,35 @@
    -------------------------------------------------- */
 
 .article-table-title {
-  margin-bottom: var(--reference-table-title-margin-bottom);
+  margin-bottom: 3px;
 
-  font-size: var(--reference-table-title-size);
-  font-weight: var(--reference-table-title-weight);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.article-table-title .article-target-number {
+  margin-right: 6px;
 }
 
 
 /* --------------------------------------------------
-   Reference
+   Legacy compatibility
    -------------------------------------------------- */
 
+.article-reference {
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
 .article-reference-number {
-  font-size: var(--reference-number-size);
+  margin-right: 6px;
+
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.article-reference-number:hover {
+  text-decoration: underline;
 }
 
 
@@ -143,36 +205,85 @@
    -------------------------------------------------- */
 
 .article-equation {
-  margin-top: var(--reference-equation-margin-top);
-  margin-bottom: var(--reference-equation-margin-bottom);
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.article-equation .equation-content {
+  flex: 1;
+  text-align: center;
+}
+
+.article-equation .article-target-number {
+  position: absolute;
+
+  right: 0;
+
+  margin: 0;
 }
 
 .equation-content {
-  /* equation content */
+  display: inline-block;
 }
 
 
 /* --------------------------------------------------
-   Target Type
+   Code Target
    -------------------------------------------------- */
 
-.article-target[data-type="figure"] {
-  /* figure target */
-}
-
-.article-target[data-type="table"] {
-  /* table target */
-}
-
-.article-target[data-type="equation"] {
-  /* equation target */
+.article-target[data-type="code"] {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 
 /* --------------------------------------------------
-   Footnotes
+   Table Target
+   -------------------------------------------------- */
+
+.article-target[data-type="table"] {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+
+/* --------------------------------------------------
+   Figure Target
+   -------------------------------------------------- */
+
+.article-target[data-type="fig"] {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+
+/* --------------------------------------------------
+   Footnote Target
    -------------------------------------------------- */
 
 .article-footnotes .article-target {
-  /* footnote target */
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   REFERENCE ENGINE - MOBILE
+   ================================================== */
+
+@media (max-width: 800px) {
+
+  .article-ref-preview,
+  .article-reference-preview {
+    width: 260px;
+
+    max-width: calc(100vw - 32px);
+  }
+
 }
