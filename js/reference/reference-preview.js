@@ -1,123 +1,114 @@
 // reference-preview.js
 
-(function(){
-"use strict";
+(function () {
+  'use strict';
+  const providers = new Map ();
 
-const providers=new Map();
+  function register (type, provider) {
+    if (!type || typeof provider !== 'function') {
+      return;
+    }
 
-function register(type,provider){
-  if(!type||typeof provider!=="function"){
-    return;
+    providers.set (type, provider);
   }
 
-  providers.set(type,provider);
-}
+  function buildReferencePreviews () {
+    const core = window.articleReferenceCore;
 
-function buildReferencePreviews(){
-  const core=window.articleReferenceCore;
-
-  if(!core){
-    console.warn("[ReferencePreview] Reference Core not found.");
-    return;
-  }
-
-  const references=core.getReferences();
-
-  references.forEach(function(reference){
-    const element=reference.element;
-    const target=reference.target;
-
-    if(!element||!target||!target.element){
+    if (!core) {
+      console.warn ('[ReferencePreview] Reference Core not found.');
       return;
     }
 
-    if(element.dataset.preview!=="true"){
-      return;
-    }
+    const references = core.getReferences ();
 
-    if(element.dataset.previewApplied==="true"){
-      return;
-    }
+    references.forEach (function (reference) {
+      const element = reference.element;
+      const target = reference.target;
 
-    element.dataset.previewApplied="true";
-
-    element.addEventListener(
-      "mouseenter",
-      function(){
-        showPreview(element,target);
+      if (!element || !target || !target.element) {
+        return;
       }
+
+      if (element.dataset.preview !== 'true') {
+        return;
+      }
+
+      if (element.dataset.previewApplied === 'true') {
+        return;
+      }
+
+      element.dataset.previewApplied = 'true';
+
+      element.addEventListener ('mouseenter', function () {
+        showPreview (element, target);
+      });
+
+      element.addEventListener ('mouseleave', function () {
+        hidePreview (element);
+      });
+    });
+
+    window.dispatchEvent (
+      new CustomEvent ('articleReferencePreviewsReady', {
+        detail: references,
+      })
     );
-
-    element.addEventListener(
-      "mouseleave",
-      function(){
-        hidePreview(element);
-      }
-    );
-  });
-
-  window.dispatchEvent(
-    new CustomEvent(
-      "articleReferencePreviewsReady",
-      {
-        detail:references
-      }
-    )
-  );
-}
-
-function showPreview(element,target){
-  let preview=element.querySelector(".article-reference-preview");
-
-  if(preview){
-    preview.hidden=false;
-    return;
   }
 
-  preview=document.createElement("span");
-  preview.className="article-reference-preview";
+  function showPreview (element, target) {
+    let preview = element.querySelector ('.article-reference-preview');
 
-  const content=document.createElement("span");
-  content.className="article-reference-preview-content";
+    if (preview) {
+      preview.hidden = false;
+      return;
+    }
 
-  const provider=providers.get(target.type);
+    preview = document.createElement ('span');
+    preview.className = 'article-reference-preview';
 
-  if(provider){
-    provider(target,content);
-  }else{
-    buildGenericPreview(target,content);
+    const content = document.createElement ('span');
+    content.className = 'article-reference-preview-content';
+    content.dataset.referencePreviewContent = 'true';
+
+    const provider = providers.get (target.type);
+
+    if (provider) {
+      provider (target, content);
+    } else {
+      buildGenericPreview (target, content);
+    }
+
+    preview.appendChild (content);
+    element.appendChild (preview);
   }
 
-  preview.appendChild(content);
-  element.appendChild(preview);
-}
+  function buildGenericPreview (target, content) {
+    const label = target.label || '';
 
-function buildGenericPreview(target,content){
-  const label=target.label||"";
+    if (label) {
+      content.textContent = label;
+      return;
+    }
 
-  if(label){
-    content.textContent=label;
-    return;
+    const text = target.element.textContent.replace (/\s+/g, ' ').trim ();
+
+    content.textContent = text;
   }
 
-  const text=target.element.textContent.replace(/\s+/g," ").trim();
+  function hidePreview (element) {
+    const preview = element.querySelector ('.article-reference-preview');
 
-  content.textContent=text;
-}
+    if (!preview) {
+      return;
+    }
 
-function hidePreview(element){
-  const preview=element.querySelector(".article-reference-preview");
-
-  if(!preview){
-    return;
+    preview.hidden = true;
   }
 
-  preview.hidden=true;
-}
+  window.articleReferencePreview = {
+    register: register,
+    process: buildReferencePreviews,
+  };
+}) ();
 
-window.articleReferencePreview={
-  register:register,
-  process:buildReferencePreviews
-};
-
-})();
