@@ -1,66 +1,38 @@
 // gallery-bootstrap.js
 
-(function(){
-"use strict";
+(function () {
+  "use strict";
 
-function runModule(name,module){
-  if(!module||typeof module.process!=="function"){
-    console.warn(
-      "[GalleryBootstrap] Module not found: "+name
-    );
-    return false;
-  }
+  const state = { started: false, ready: false };
 
-  try{
-    module.process();
-    return true;
-  }catch(error){
-    console.error(
-      "[GalleryBootstrap] Module failed: "+name,
-      error
-    );
-    return false;
-  }
-}
+  function bootstrap() {
+    if (state.started) return;
 
-function bootstrap(){
-  if(
-    window.articleGalleryBootstrap&&
-    window.articleGalleryBootstrap.started
-  ){
-    return;
-  }
+    state.started = true;
+    console.log("[GalleryBootstrap] START");
 
-  window.articleGalleryBootstrap={
-    started:true,
-    ready:false
-  };
+    const gallery = window.articleGallery;
 
-  console.log("[GalleryBootstrap] START");
-
-  runModule("Gallery",window.articleGallery);
-
-  window.articleGalleryBootstrap.ready=true;
-
-  console.log("[GalleryBootstrap] READY");
-
-  document.dispatchEvent(
-    new CustomEvent(
-      "articleGalleryBootstrapReady",
-      {
-        detail:window.articleGalleryBootstrap
+    if (!gallery || typeof gallery.process !== "function") {
+      console.warn("[GalleryBootstrap] Gallery module not found.");
+    } else {
+      try {
+        gallery.process();
+      } catch (error) {
+        console.error("[GalleryBootstrap] Gallery failed:", error);
       }
-    )
-  );
-}
+    }
 
-if(document.readyState==="loading"){
-  document.addEventListener(
-    "DOMContentLoaded",
-    bootstrap
-  );
-}else{
-  bootstrap();
-}
+    state.ready = true;
+    console.log("[GalleryBootstrap] READY");
 
+    document.dispatchEvent(
+      new CustomEvent("articleGalleryBootstrapReady", { detail: state })
+    );
+  }
+
+  window.articleGalleryBootstrap = {
+    process: bootstrap,
+    getState: () => state
+  };
 })();
