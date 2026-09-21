@@ -1,0 +1,178 @@
+/* ==================================================
+   REFERENCE ENGINE
+   ================================================== */
+
+/* --------------------------------------------------
+   Reference Engine Variables
+   -------------------------------------------------- */
+
+:root {
+
+  --reference-section-title-size: 1.1rem;
+  --reference-section-title-weight: 600;
+  --reference-section-title-margin-top: 2.5em;
+  --reference-section-title-margin-bottom: 1em;
+
+  --reference-target-padding-top: 2px;
+  --reference-target-padding-bottom: 2px;
+
+  --reference-target-number-size: 0.8rem;
+  --reference-target-number-margin-right: 4px;
+
+  --reference-link-padding: 2px 4px;
+
+  --reference-preview-width: 320px;
+  --reference-preview-padding: 12px;
+
+  --reference-back-margin-top: 12px;
+
+  --reference-figure-margin-top: 1.5em;
+  --reference-figure-margin-bottom: 1.5em;
+
+  --reference-table-title-size: 0.9rem;
+  --reference-table-title-weight: 600;
+  --reference-table-title-margin-bottom: 6px;
+
+  --reference-number-size: 0.8rem;
+
+  --reference-equation-margin-top: 1.5em;
+  --reference-equation-margin-bottom: 1.5em;
+
+}
+
+
+/* --------------------------------------------------
+   References
+   -------------------------------------------------- */
+
+.article-references {
+  margin-top: 2.5em;
+}
+
+.article-reference-section-title {
+  margin-top: var(--reference-section-title-margin-top);
+  margin-bottom: var(--reference-section-title-margin-bottom);
+
+  font-size: var(--reference-section-title-size);
+  font-weight: var(--reference-section-title-weight);
+}
+
+
+/* --------------------------------------------------
+   Article Target
+   -------------------------------------------------- */
+
+.article-target {
+  padding-top: var(--reference-target-padding-top);
+  padding-bottom: var(--reference-target-padding-bottom);
+}
+
+.article-target-number {
+  margin-right: var(--reference-target-number-margin-right);
+
+  font-size: var(--reference-target-number-size);
+}
+
+
+/* --------------------------------------------------
+   Reference Link
+   -------------------------------------------------- */
+
+.article-ref-link {
+  padding: var(--reference-link-padding);
+}
+
+
+/* --------------------------------------------------
+   Reference Preview
+   -------------------------------------------------- */
+
+.article-ref-preview {
+  width: var(--reference-preview-width);
+  padding: var(--reference-preview-padding);
+}
+
+.article-reference-preview {
+  width: var(--reference-preview-width);
+  padding: var(--reference-preview-padding);
+}
+
+
+/* --------------------------------------------------
+   Reference Back
+   -------------------------------------------------- */
+
+.article-reference-back {
+  margin-top: var(--reference-back-margin-top);
+}
+
+
+/* --------------------------------------------------
+   Figure
+   -------------------------------------------------- */
+
+.article-figure {
+  margin-top: var(--reference-figure-margin-top);
+  margin-bottom: var(--reference-figure-margin-bottom);
+}
+
+
+/* --------------------------------------------------
+   Table
+   -------------------------------------------------- */
+
+.article-table-title {
+  margin-bottom: var(--reference-table-title-margin-bottom);
+
+  font-size: var(--reference-table-title-size);
+  font-weight: var(--reference-table-title-weight);
+}
+
+
+/* --------------------------------------------------
+   Reference
+   -------------------------------------------------- */
+
+.article-reference-number {
+  font-size: var(--reference-number-size);
+}
+
+
+/* --------------------------------------------------
+   Equation
+   -------------------------------------------------- */
+
+.article-equation {
+  margin-top: var(--reference-equation-margin-top);
+  margin-bottom: var(--reference-equation-margin-bottom);
+}
+
+.equation-content {
+  /* equation content */
+}
+
+
+/* --------------------------------------------------
+   Target Type
+   -------------------------------------------------- */
+
+.article-target[data-type="figure"] {
+  /* figure target */
+}
+
+.article-target[data-type="table"] {
+  /* table target */
+}
+
+.article-target[data-type="equation"] {
+  /* equation target */
+}
+
+
+/* --------------------------------------------------
+   Footnotes
+   -------------------------------------------------- */
+
+.article-footnotes .article-target {
+  /* footnote target */
+}
