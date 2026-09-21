@@ -1,67 +1,49 @@
 // reference-link.js
 
-(function(){
-"use strict";
+(function () {
+  "use strict";
 
-function buildReferenceLinks(){
-  const core=window.articleReferenceCore;
-
-  if(!core){
-    console.warn("[ReferenceLink] Reference Core not found.");
-    return;
-  }
-
-  const display=window.articleReferenceDisplay;
-
-  if(!display){
-    console.warn("[ReferenceLink] Reference Display not found.");
-    return;
-  }
-
-  const references=core.getReferences();
-
-  references.forEach(function(reference){
-    const element=reference.element;
-    const target=reference.target;
-
-    if(!element||!target){
+  function buildReferenceLinks() {
+    const core = window.articleReferenceCore;
+    if (!core) {
+      console.warn("[ReferenceLink] Reference Core not found.");
       return;
     }
 
-    if(element.dataset.referenceLinkApplied==="true"){
+    const display = window.articleReferenceDisplay;
+    if (!display) {
+      console.warn("[ReferenceLink] Reference Display not found.");
       return;
     }
 
-    const label=display.getReferenceLabel(reference);
-    const link=document.createElement("a");
+    const references = core.getReferences();
 
-    link.className="article-reference-link";
-    link.textContent=label;
-    link.href="#"+(target.element.id||"");
-    link.dataset.linked="true";
+    references.forEach(reference => {
+      const { element, target } = reference;
+      if (!element || !target) return;
 
-    element.textContent="";
-    element.appendChild(link);
-    element.dataset.referenceLinkApplied="true";
-  });
-
-  window.dispatchEvent(
-    new CustomEvent(
-      "articleReferenceLinksReady",
-      {
-        detail:references
+      if (
+        element.closest("[data-reference-preview-content='true']") ||
+        element.dataset.referenceLinkApplied === "true"
+      ) {
+        return;
       }
-    )
-  );
-}
 
-window.articleReferenceLink={
-  process:buildReferenceLinks
-};
+      const link = document.createElement("a");
+      link.className = "article-reference-link";
+      link.textContent = display.getReferenceLabel(reference);
+      link.href = "#" + (target.element.id || "");
+      link.dataset.linked = "true";
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildReferenceLinks
-);
+      element.textContent = "";
+      element.appendChild(link);
+      element.dataset.referenceLinkApplied = "true";
+    });
 
+    window.dispatchEvent(
+      new CustomEvent("articleReferenceLinksReady", { detail: references })
+    );
+  }
+
+  window.articleReferenceLink = { process: buildReferenceLinks };
 })();
