@@ -1,0 +1,76 @@
+/* ==================================================
+   CONTENTS
+   ================================================== */
+
+:root {
+  /* ------------------------------------------------
+     Contents
+     ------------------------------------------------ */
+
+  --contents-font-size: 0.88rem;
+  --contents-title-size: 0.95rem;
+  --contents-title-weight: 600;
+  --contents-title-margin-bottom: 10px;
+  --contents-title-padding-bottom: 6px;
+  --contents-item-margin: 2px 0;
+  --contents-link-padding: 2px 4px;
+  --contents-sublevel-indent: 16px;
+  --contents-sticky-top: 20px;
+  --contents-label-weight: 500;
+
+  /* ------------------------------------------------
+     Colors
+     ------------------------------------------------ */
+
+  --color-border-light: #c8ccd1;
+  --color-link: #0645ad;
+  --color-hover: #eaecf0;
+}
+
+.contents {
+  position: sticky;
+  top: var(--contents-sticky-top);
+  max-height: calc(100vh - 60px);
+  align-self: start;
+  font-size: var(--contents-font-size);
+  overflow-y: auto;
+}
+
+.contents-title {
+  margin: 0 0 var(--contents-title-margin-bottom);
+  font-size: var(--contents-title-size);
+  font-weight: var(--contents-title-weight);
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: var(--contents-title-padding-bottom);
+}
+
+.contents ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contents li {
+  margin: var(--contents-item-margin);
+}
+
+.contents li a {
+  display: block;
+  padding: var(--contents-link-padding);
+  color: var(--color-link);
+  font-weight: var(--contents-label-weight);
+}
+
+.contents li a:hover {
+  background: var(--color-hover);
+  text-decoration: none;
+}
+
+.contents .level-2 {
+  padding-left: var(--contents-sublevel-indent);
+}
+
+.contents-top-link {
+  color: var(--color-link);
+  font-weight: var(--contents-label-weight);
+}
