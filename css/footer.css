@@ -1,0 +1,237 @@
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+
+/* ==================================================
+   DESIGN PARAMETERS
+   ================================================== */
+
+:root {
+
+  /* --------------------------------------------------
+     Footer
+     -------------------------------------------------- */
+
+  --footer-margin-top: 60px;
+
+  --footer-font-size: 0.8rem;
+
+  --footer-padding-top: 24px;
+  --footer-padding-right: 24px;
+  --footer-padding-bottom: 24px;
+  --footer-padding-left: 24px;
+
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.site-footer {
+  margin-top: 64px;
+
+  background: #07273b;
+
+  border-top: 1px solid #cccccc;
+}
+
+
+/* ==================================================
+   FOOTER WIDGETS
+   記事ページのみ
+   ================================================== */
+
+.footer-widgets {
+  background: #cccccc;
+
+  padding:
+    32px
+    var(--header-padding-right)
+    24px
+    var(--header-padding-left);
+}
+
+.footer-widgets-inner {
+  max-width: var(--site-max-width);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 32px;
+}
+
+.footer-widgets-inner > .section {
+  min-width: 0;
+}
+
+
+/* ==================================================
+   FOOTER WIDGET CARDS
+   ================================================== */
+
+.footer-widget,
+.footer-widgets-inner > .section {
+  background: #fcfcfc;
+
+  border: 1px solid #cccccc;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  color: #202122;
+}
+
+.footer-widgets-inner h2 {
+  margin: 0 0 14px;
+
+  padding-bottom: 8px;
+
+  color: #202122;
+
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  border-bottom: 1px solid #c8ccd1;
+}
+
+.footer-widgets-inner a {
+  color: #0645ad;
+}
+
+.footer-widgets-inner .item-snippet,
+.footer-widgets-inner .popular-post-abstract,
+.footer-widgets-inner .post-count,
+.footer-widgets-inner .label-count {
+  color: #54595d;
+}
+
+
+/* ==================================================
+   FOOTER POPULAR POSTS
+   ================================================== */
+
+.footer-widgets-inner .popular-posts ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-widgets-inner .popular-posts li {
+  position: relative;
+
+  display: block;
+
+  margin:
+    0 0
+    var(--popular-post-item-margin-bottom);
+
+  padding:
+    0 0
+    var(--popular-post-item-margin-bottom);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer-widgets-inner .popular-posts li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+
+.footer-widgets-inner .popular-posts .item-title {
+  margin: 0;
+
+  font-size: var(--popular-post-title-size);
+  line-height: var(--popular-post-title-line-height);
+}
+
+.footer-widgets-inner .popular-posts .item-title a {
+  color: var(--color-link);
+
+  text-decoration: none;
+
+  font-weight: var(--popular-post-title-weight);
+}
+
+.footer-widgets-inner .popular-post-abstract,
+.footer-widgets-inner .popular-posts .item-snippet {
+  margin-top: 4px;
+
+  color: var(--color-text);
+
+  font-size: var(--popular-post-abstract-size);
+  line-height: var(--popular-post-abstract-line-height);
+}
+
+.footer-widgets-inner .popular-posts .item-thumbnail {
+  float: right;
+
+  width: var(--popular-post-thumbnail-width);
+
+  margin:
+    0 0 4px
+    var(--popular-post-item-gap);
+}
+
+.footer-widgets-inner .popular-posts .item-thumbnail img {
+  display: block;
+
+  width: 100%;
+  height: var(--popular-post-thumbnail-height);
+
+  object-fit: cover;
+}
+
+
+/* ==================================================
+   FOOTER LINKS
+   全ページ表示
+   ================================================== */
+
+.site-footer-inner {
+  max-width: var(--site-max-width);
+
+  margin: 0 auto;
+
+  padding:
+    28px
+    var(--header-padding-right)
+    28px
+    var(--header-padding-left);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #f2f4f5;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
