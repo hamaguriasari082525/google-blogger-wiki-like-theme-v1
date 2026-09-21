@@ -1,0 +1,32 @@
+/* ==================================================
+   CATEGORY PAGE
+   ================================================== */
+
+
+/* --------------------------------------------------
+   CATEGORY LIST
+   -------------------------------------------------- */
+
+#Label2 ul {
+  margin: 24px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+#Label2 li {
+  margin: 0;
+
+  padding: 12px 0;
+}
+
+#Label2 a {
+  color: var(--color-link);
+
+  text-decoration: none;
+}
+
+#Label2 a:hover {
+  text-decoration: underline;
+}
