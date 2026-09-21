@@ -2,29 +2,25 @@
    HEADER
    ================================================== */
 
-/* ==================================================
-   HEADER PARAMETERS
-   ================================================== */
-
 :root {
-  /* --------------------------------------------------
-     Header
-     -------------------------------------------------- */
-  --header-border-color: #5B858B;
+  /* ------------------------------------------------
+     Base
+     ------------------------------------------------ */
+  --header-border-color: #5b858b;
   --header-border-width: 1px;
 
-  /* --------------------------------------------------
-     Header Section
-     -------------------------------------------------- */
+  /* ------------------------------------------------
+     Section
+     ------------------------------------------------ */
   --header-section-max-width: 1280px;
 
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Search
-     -------------------------------------------------- */
-  --header-search-padding-top: 8px;
-  --header-search-padding-bottom: 8px;
+     ------------------------------------------------ */
   --header-search-width: 360px;
   --header-search-height: 36px;
+  --header-search-padding-top: 8px;
+  --header-search-padding-bottom: 8px;
   --header-search-input-padding-x: 10px;
   --header-search-input-padding-y: 7px;
   --header-search-button-width: 56px;
@@ -36,47 +32,53 @@
   --header-search-button-background: #f2f4f5;
   --header-search-button-color: #3f4a52;
 
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Brand
-     -------------------------------------------------- */
+     ------------------------------------------------ */
   --header-brand-padding-top: 32px;
   --header-brand-padding-bottom: 32px;
   --header-title-size: 2.4rem;
   --header-title-weight: var(--site-title-weight);
   --header-title-line-height: 1.2;
   --header-title-color: #07273b;
+  --header-description-margin-top: 8px;
+  --header-description-size: 0.85rem;
+  --header-description-line-height: 1.7;
 
-  /* --------------------------------------------------
-     Header Navigation
-     -------------------------------------------------- */
+  /* ------------------------------------------------
+     Navigation
+     ------------------------------------------------ */
   --header-navigation-background: #07273b;
   --header-navigation-padding-top: 10px;
   --header-navigation-padding-bottom: 10px;
   --header-navigation-gap: 32px;
+  --header-navigation-list-padding-x: 32px;
 
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Page List
-     -------------------------------------------------- */
+     ------------------------------------------------ */
   --header-page-list-font-size: 0.9rem;
   --header-page-list-font-weight: 600;
   --header-page-list-line-height: 1.5;
-  --header-page-list-padding-x: 0;
-  --header-page-list-padding-y: 0;
   --header-page-list-link-padding-x: 0;
   --header-page-list-link-padding-y: 0;
   --header-page-list-color: #fff;
   --header-page-list-hover-color: #fff;
 
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Share
-     -------------------------------------------------- */
+     ------------------------------------------------ */
   --header-share-font-size: 0.9rem;
   --header-share-font-weight: 600;
   --header-share-color: #fff;
+  --header-share-button-gap: 5px;
+  --header-share-button-padding-y: 3px;
   --header-share-menu-width: 170px;
   --header-share-menu-offset: 8px;
+  --header-share-menu-padding-y: 5px;
   --header-share-menu-background: #fff;
   --header-share-menu-border-color: #c8ced2;
+  --header-share-menu-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   --header-share-item-padding-x: 14px;
   --header-share-item-padding-y: 6px;
   --header-share-item-min-height: 34px;
@@ -85,34 +87,77 @@
   --header-share-item-hover-background: #f1f3f4;
   --header-share-item-hover-color: #000;
 
-  /* --------------------------------------------------
-     Header Tools
+  /* ------------------------------------------------
+     Tools
      RSS / リンクコピー
-     -------------------------------------------------- */
+     ------------------------------------------------ */
   --header-tools-gap: 8px;
   --header-tools-height: 36px;
+  --header-tools-padding-right: 32px;
   --header-tool-size: 20px;
   --header-tool-button-size: 24px;
   --header-tool-icon-stroke-width: 3;
-  --header-tools-padding-right: 32px;
-  --header-tools-status-offset: 30px;
-  --header-tools-status-size: 0.75rem;
   --header-tools-color: #fff;
+  --header-tools-status-offset: 8px;
+  --header-tools-status-size: 0.75rem;
+  --header-tools-status-padding-x: 10px;
+  --header-tools-status-padding-y: 6px;
+  --header-tools-status-color: #222;
+  --header-tools-status-background: #fff;
+  --header-tools-status-border-color: #c8ced2;
+  --header-tools-status-border-radius: 4px;
+  --header-tools-status-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  --header-tools-status-transition-duration: 0.25s;
+
+  /* ==================================================
+     Mobile
+     ================================================== */
+  /* ------------------------------------------------
+     Breakpoint
+     ------------------------------------------------ */
+  --header-mobile-breakpoint: 700px;
+
+  /* ------------------------------------------------
+     Search
+     ------------------------------------------------ */
+  --header-mobile-search-padding-top: 8px;
+  --header-mobile-search-padding-bottom: 8px;
+
+  /* ------------------------------------------------
+     Brand
+     ------------------------------------------------ */
+  --header-mobile-brand-padding-top: 24px;
+  --header-mobile-brand-padding-bottom: 24px;
+  --header-mobile-title-size: 1.8rem;
+
+  /* ------------------------------------------------
+     Navigation
+     ------------------------------------------------ */
+  --header-mobile-navigation-padding-top: 8px;
+  --header-mobile-navigation-padding-bottom: 8px;
+  --header-mobile-navigation-gap: 12px;
+  --header-mobile-page-list-font-size: 0.84rem;
+
+  /* ------------------------------------------------
+     Description
+     ------------------------------------------------ */
+  --header-mobile-description-size: 0.8rem;
 }
 
 /* ==================================================
    HEADER BASE
    ================================================== */
-
 .site-header {
   position: relative;
-  border-bottom: var(--header-border-width) solid var(--header-border-color);
+  border-bottom:
+    var(--header-border-width)
+    solid
+    var(--header-border-color);
 }
 
 /* ==================================================
    HEADER SECTION
    ================================================== */
-
 .header-section {
   width: 100%;
   max-width: var(--header-section-max-width);
@@ -129,10 +174,12 @@
 /* ==================================================
    HEADER SEARCH
    ================================================== */
-
 .header-section #BlogSearch1 {
   width: var(--header-search-width);
-  padding: var(--header-search-padding-top) 0 var(--header-search-padding-bottom);
+  padding:
+    var(--header-search-padding-top)
+    0
+    var(--header-search-padding-bottom);
 }
 
 .header-section #BlogSearch1 > .title {
@@ -165,7 +212,9 @@
   width: 100%;
   height: var(--header-search-height);
   margin: 0;
-  padding: var(--header-search-input-padding-y) var(--header-search-input-padding-x);
+  padding:
+    var(--header-search-input-padding-y)
+    var(--header-search-input-padding-x);
   border: 1px solid var(--header-search-border-color);
   background: var(--header-search-background);
   color: var(--color-text);
@@ -184,7 +233,9 @@
   width: var(--header-search-button-width);
   height: var(--header-search-height);
   margin: 0;
-  padding: var(--header-search-input-padding-y) var(--header-search-button-padding-x);
+  padding:
+    var(--header-search-input-padding-y)
+    var(--header-search-button-padding-x);
   border: 1px solid var(--header-search-border-color);
   background: var(--header-search-button-background);
   color: var(--header-search-button-color);
@@ -201,10 +252,12 @@
 /* ==================================================
    HEADER BRAND
    ================================================== */
-
 .header-section #Header1 {
   position: relative;
-  padding: var(--header-brand-padding-top) 0 var(--header-brand-padding-bottom);
+  padding:
+    var(--header-brand-padding-top)
+    0
+    var(--header-brand-padding-bottom);
   background: var(--color-page);
 }
 
@@ -245,29 +298,29 @@
 }
 
 .header-section #Header1 .descriptionwrapper {
-  margin-top: 8px;
+  margin-top: var(--header-description-margin-top);
 }
 
 .header-section #Header1 .description {
   margin: 0;
   color: var(--color-muted);
   font-family: inherit;
-  font-size: 0.85rem;
-  line-height: 1.7;
+  font-size: var(--header-description-size);
+  line-height: var(--header-description-line-height);
   text-align: center;
 }
 
 /* ==================================================
    HEADER PAGE LIST
    ================================================== */
-
 .header-navigation-section {
   width: 100%;
   margin: 0;
   padding: 0;
-
-  border-top: var(--header-border-width) solid var(--header-border-color);
-
+  border-top:
+    var(--header-border-width)
+    solid
+    var(--header-border-color);
   background: var(--header-navigation-background);
 }
 
@@ -280,8 +333,10 @@
 .header-navigation-section #PageList1 {
   width: 100%;
   margin: 0;
-  padding: var(--header-navigation-padding-top) 0 var(--header-navigation-padding-bottom);
-
+  padding:
+    var(--header-navigation-padding-top)
+    0
+    var(--header-navigation-padding-bottom);
   background: var(--header-navigation-background);
 }
 
@@ -301,12 +356,12 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--header-navigation-gap);
-
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 0 32px;
-
+  padding:
+    0
+    var(--header-navigation-list-padding-x);
   list-style: none;
 }
 
@@ -317,17 +372,14 @@
 
 .header-navigation-section #PageList1 li a {
   display: block;
-
-  padding: var(--header-page-list-link-padding-y)
-           var(--header-page-list-link-padding-x);
-
+  padding:
+    var(--header-page-list-link-padding-y)
+    var(--header-page-list-link-padding-x);
   color: var(--header-page-list-color);
-
   font-family: inherit;
   font-size: var(--header-page-list-font-size);
   font-weight: var(--header-page-list-font-weight);
   line-height: var(--header-page-list-line-height);
-
   text-decoration: none;
 }
 
@@ -343,7 +395,6 @@
 /* ==================================================
    HEADER SHARE
    ================================================== */
-
 .header-share {
   position: relative;
   flex-shrink: 0;
@@ -354,8 +405,10 @@
   appearance: none;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 0;
+  gap: var(--header-share-button-gap);
+  padding:
+    var(--header-share-button-padding-y)
+    0;
   border: 0;
   background: transparent;
   color: var(--header-share-color);
@@ -377,20 +430,27 @@
 }
 
 /* ==================================================
-   SHARE MENU
+   HEADER SHARE MENU
    ================================================== */
-
 .header-share-menu {
   position: absolute;
-  top: calc(100% + var(--header-share-menu-offset));
+  top:
+    calc(
+      100% +
+      var(--header-share-menu-offset)
+    );
   right: 0;
   z-index: 1000;
   display: none;
   min-width: var(--header-share-menu-width);
-  padding: 5px 0;
+  padding:
+    var(--header-share-menu-padding-y)
+    0;
   background: var(--header-share-menu-background);
-  border: 1px solid var(--header-share-menu-border-color);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  border:
+    1px solid
+    var(--header-share-menu-border-color);
+  box-shadow: var(--header-share-menu-shadow);
 }
 
 .header-share.is-open .header-share-menu {
@@ -398,16 +458,17 @@
 }
 
 /* ==================================================
-   SHARE ITEMS
+   HEADER SHARE ITEMS
    ================================================== */
-
 .header-share-menu .header-share-item {
   display: flex;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
   min-height: var(--header-share-item-min-height);
-  padding: var(--header-share-item-padding-y) var(--header-share-item-padding-x);
+  padding:
+    var(--header-share-item-padding-y)
+    var(--header-share-item-padding-x);
   border: 0;
   background: var(--header-share-menu-background);
   color: var(--header-share-item-color) !important;
@@ -429,14 +490,18 @@
   white-space: nowrap;
 }
 
-/* ========================================
-   Header tools
-   RSS / リンクコピー
-   ======================================== */
-
+/* ==================================================
+   HEADER TOOLS
+   ================================================== */
 .header-section #HTML1 {
   position: absolute;
-  right: max(0px, calc((100% - var(--header-section-max-width)) / 2));
+  right:
+    max(
+      0px,
+      calc(
+        (100% - var(--header-section-max-width)) / 2
+      )
+    );
   bottom: 0;
   z-index: 20;
   width: auto;
@@ -455,7 +520,11 @@
   gap: var(--header-tools-gap);
   height: var(--header-tools-height);
   margin: 0;
-  padding: 0 var(--header-tools-padding-right) 0 0;
+  padding:
+    0
+    var(--header-tools-padding-right)
+    0
+    0;
 }
 
 .header-tool-link,
@@ -491,86 +560,85 @@
   opacity: 0.7;
 }
 
+/* ==================================================
+   HEADER COPY STATUS
+   ================================================== */
 .header-copy-status {
   position: absolute;
   right: 0;
-  top: calc(100% + 8px);
+  top:
+    calc(
+      100% +
+      var(--header-tools-status-offset)
+    );
   z-index: 30;
-
   box-sizing: border-box;
-  padding: 6px 10px;
-
+  padding:
+    var(--header-tools-status-padding-y)
+    var(--header-tools-status-padding-x);
   white-space: nowrap;
-
   font-size: var(--header-tools-status-size);
   line-height: 1.4;
-  color: #222;
-
-  background: #fff;
-  border: 1px solid #c8ced2;
-  border-radius: 4px;
-
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-
+  color: var(--header-tools-status-color);
+  background: var(--header-tools-status-background);
+  border:
+    1px solid
+    var(--header-tools-status-border-color);
+  border-radius:
+    var(--header-tools-status-border-radius);
+  box-shadow: var(--header-tools-status-shadow);
   pointer-events: none;
-
   opacity: 0;
   visibility: hidden;
-
   transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+    opacity var(--header-tools-status-transition-duration) ease,
+    visibility var(--header-tools-status-transition-duration) ease;
 }
 
 /* ==================================================
    HEADER MOBILE
    ================================================== */
-
 @media (max-width: 700px) {
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Search
-     -------------------------------------------------- */
-
+     ------------------------------------------------ */
   .header-section #BlogSearch1 {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: var(--header-mobile-search-padding-top);
+    padding-bottom: var(--header-mobile-search-padding-bottom);
   }
 
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Brand
-     -------------------------------------------------- */
-
+     ------------------------------------------------ */
   .header-section #Header1 {
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: var(--header-mobile-brand-padding-top);
+    padding-bottom: var(--header-mobile-brand-padding-bottom);
   }
 
   .header-section #Header1 h1.title {
-    font-size: 1.8rem;
+    font-size: var(--header-mobile-title-size);
   }
 
-  /* --------------------------------------------------
+  /* ------------------------------------------------
      Page List
-     -------------------------------------------------- */
-
-  .header-section #PageList1 {
-    padding-top: 8px;
-    padding-bottom: 8px;
+     ------------------------------------------------ */
+  .header-navigation-section #PageList1 {
+    padding-top: var(--header-mobile-navigation-padding-top);
+    padding-bottom: var(--header-mobile-navigation-padding-bottom);
   }
 
-  .header-section #PageList1 ul {
-    gap: 12px;
+  .header-navigation-section #PageList1 ul {
+    gap: var(--header-mobile-navigation-gap);
   }
 
-  .header-section #PageList1 li a {
-    font-size: 0.84rem;
+  .header-navigation-section #PageList1 li a {
+    font-size: var(--header-mobile-page-list-font-size);
   }
 
-  /* --------------------------------------------------
-     Header description
-     -------------------------------------------------- */
-
+  /* ------------------------------------------------
+     Description
+     ------------------------------------------------ */
   .header-section #Header1 .description {
-    font-size: 0.8rem;
+    font-size: var(--header-mobile-description-size);
   }
 }
