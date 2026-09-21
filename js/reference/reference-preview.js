@@ -5,10 +5,7 @@
   const providers = new Map ();
 
   function register (type, provider) {
-    if (!type || typeof provider !== 'function') {
-      return;
-    }
-
+    if (!type || typeof provider !== 'function') return;
     providers.set (type, provider);
   }
 
@@ -26,17 +23,10 @@
       const element = reference.element;
       const target = reference.target;
 
-      if (!element || !target || !target.element) {
-        return;
-      }
-
-      if (element.dataset.preview !== 'true') {
-        return;
-      }
-
-      if (element.dataset.previewApplied === 'true') {
-        return;
-      }
+      if (!element || !target || !target.element) return;
+      if (element.closest ("[data-reference-preview-content='true']")) return;
+      if (element.dataset.preview !== 'true') return;
+      if (element.dataset.previewApplied === 'true') return;
 
       element.dataset.previewApplied = 'true';
 
@@ -50,9 +40,7 @@
     });
 
     window.dispatchEvent (
-      new CustomEvent ('articleReferencePreviewsReady', {
-        detail: references,
-      })
+      new CustomEvent ('articleReferencePreviewsReady', {detail: references})
     );
   }
 
@@ -92,16 +80,13 @@
     }
 
     const text = target.element.textContent.replace (/\s+/g, ' ').trim ();
-
     content.textContent = text;
   }
 
   function hidePreview (element) {
     const preview = element.querySelector ('.article-reference-preview');
 
-    if (!preview) {
-      return;
-    }
+    if (!preview) return;
 
     preview.hidden = true;
   }
@@ -111,4 +96,3 @@
     process: buildReferencePreviews,
   };
 }) ();
-
