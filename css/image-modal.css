@@ -1,0 +1,128 @@
+/* ==================================================
+   IMAGE MODAL
+   ================================================== */
+
+
+/* --------------------------------------------------
+   Image Modal
+   -------------------------------------------------- */
+
+.image-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  cursor: zoom-out;
+}
+
+.image-modal img {
+  display: block;
+
+  max-width: 95vw;
+  max-height: 90vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+.image-modal-caption {
+  position: absolute;
+
+  left: 50%;
+  bottom: 24px;
+
+  transform:
+    translateX(-50%)
+    translateY(8px);
+
+  max-width: min(720px, calc(100vw - 48px));
+
+  padding: 8px 14px;
+
+  border-radius: 4px;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  color: #fff;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  text-align: center;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.image-modal:has(img:hover) .image-modal-caption {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+.image-modal-close {
+  position: absolute;
+
+  top: 12px;
+  right: 18px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 2rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* ==================================================
+   IMAGE MODAL - MOBILE
+   ================================================== */
+
+@media (max-width: 800px) {
+
+  .image-modal {
+    padding: 12px;
+  }
+
+  .image-modal img {
+    max-width: 96vw;
+    max-height: 85vh;
+  }
+
+  .image-modal-caption {
+    left: 12px;
+    right: 12px;
+
+    bottom: 10px;
+
+    max-width: calc(100vw - 24px);
+
+    font-size: 0.8rem;
+  }
+
+}
