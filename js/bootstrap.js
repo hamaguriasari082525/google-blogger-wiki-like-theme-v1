@@ -3,6 +3,16 @@
 (function () {
   "use strict";
 
+  console.log(
+    "[Bootstrap] FEATURES",
+    {
+      contents:window.articleContentsBootstrap,
+      gallery:window.articleGalleryBootstrap,
+      reference:window.articleReferenceBootstrap,
+      article:window.articleBootstrap
+    }
+  );
+
   const state = { started: false, ready: false };
 
   function runFeature(name, feature) {

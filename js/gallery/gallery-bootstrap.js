@@ -29,6 +29,11 @@
     document.dispatchEvent(
       new CustomEvent("articleGalleryBootstrapReady", { detail: state })
     );
+
+    console.log(
+      "[GalleryBootstrap] REGISTERED",
+      window.articleGalleryBootstrap
+    );
   }
 
   window.articleGalleryBootstrap = {

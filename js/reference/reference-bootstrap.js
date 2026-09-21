@@ -48,6 +48,11 @@
     document.dispatchEvent(
       new CustomEvent("articleReferenceBootstrapReady", { detail: state })
     );
+
+    console.log(
+      "[ReferenceBootstrap] REGISTERED",
+      window.articleReferenceBootstrap
+    );
   }
 
   window.articleReferenceBootstrap = {

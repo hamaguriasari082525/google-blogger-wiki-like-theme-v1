@@ -37,6 +37,11 @@
     document.dispatchEvent(
       new CustomEvent("articleContentsBootstrapReady", { detail: state })
     );
+
+    console.log(
+      "[ContentsBootstrap] REGISTERED",
+      window.articleContentsBootstrap
+    );
   }
 
   window.articleContentsBootstrap = {
