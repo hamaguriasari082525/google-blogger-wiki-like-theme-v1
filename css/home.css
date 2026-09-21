@@ -1,0 +1,533 @@
+/* ==================================================
+   INDEX / HOME
+   ================================================== */
+
+/* ==================================================
+   HOME PARAMETERS
+   ================================================== */
+
+:root {
+
+  /* --------------------------------------------------
+     Home
+     -------------------------------------------------- */
+
+  --home-max-width: 900px;
+
+  --home-introduction-margin-bottom: 40px;
+
+  --home-heading-size: 1.55rem;
+  --home-heading-weight: 600;
+  --home-heading-line-height: 1.4;
+  --home-heading-margin-bottom: 16px;
+  --home-heading-padding-bottom: 5px;
+
+  --home-text-line-height: 1.85;
+
+  --home-sidebar-section-gap: 32px;
+
+
+  /* --------------------------------------------------
+     Article List
+     -------------------------------------------------- */
+
+  --article-list-item-margin-bottom: 14px;
+  --article-list-item-padding-bottom: 10px;
+  --article-list-item-gap: 20px;
+
+  --article-list-meta-size: 0.75rem;
+  --article-list-meta-margin-bottom: 5px;
+
+  --article-list-title-size: 1.1rem;
+  --article-list-title-margin-bottom: 5px;
+  --article-list-title-line-height: 1.4;
+  --article-list-title-weight: 600;
+
+  --article-list-abstract-size: 0.88rem;
+  --article-list-abstract-line-height: 1.55;
+
+  --article-list-thumbnail-width: 240px;
+  --article-list-thumbnail-max-height: 150px;
+  --article-list-mobile-thumbnail-max-height: 220px;
+
+
+  /* --------------------------------------------------
+     Popular Post
+     -------------------------------------------------- */
+
+  --popular-post-item-gap: 10px;
+  --popular-post-item-margin-bottom: 10px;
+
+  --popular-post-title-size: 0.9rem;
+  --popular-post-title-line-height: 1.4;
+  --popular-post-title-weight: 600;
+
+  --popular-post-abstract-size: 0.78rem;
+  --popular-post-abstract-line-height: 1.45;
+
+  --popular-post-thumbnail-width: 72px;
+  --popular-post-thumbnail-height: 54px;
+
+  --popular-post-meta-size: 0.72rem;
+
+}
+
+
+
+/* ==================================================
+   HOME LAYOUT
+   ================================================== */
+
+.article-main:has(.home-main) {
+  max-width: none;
+  width: 100%;
+}
+
+.home-main {
+  max-width: none;
+  width: 100%;
+}
+
+.home-introduction {
+  margin-bottom: var(--home-introduction-margin-bottom);
+}
+
+.home-introduction-inner {
+  max-width: 760px;
+  padding: 0 0 8px;
+}
+
+.home-site-name {
+  margin-bottom: 10px;
+
+  color: var(--color-text);
+
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.home-introduction p {
+  margin: 0;
+
+  color: var(--color-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.home-introduction h2,
+.article-list h2 {
+  margin-top: 0;
+
+  margin-bottom: var(--home-heading-margin-bottom);
+
+  padding-bottom: var(--home-heading-padding-bottom);
+
+  border-bottom: 1px solid var(--color-border);
+
+  font-size: var(--home-heading-size);
+  font-weight: var(--home-heading-weight);
+  line-height: var(--home-heading-line-height);
+}
+
+.site-layout.home-layout {
+  grid-template-columns:
+    minmax(0, 1fr)
+    320px;
+}
+
+
+
+/* ==================================================
+   HOME SIDEBAR
+   ================================================== */
+
+.home-sidebar {
+  min-width: 0;
+}
+
+.home-sidebar-section h2 {
+  margin-top: 0;
+
+  margin-bottom: var(--home-heading-margin-bottom);
+
+  padding-bottom: var(--home-heading-padding-bottom);
+
+  border-bottom: 1px solid var(--color-border);
+
+  color: var(--color-text);
+
+  font-size: var(--home-heading-size);
+  font-weight: var(--home-heading-weight);
+  line-height: var(--home-heading-line-height);
+}
+
+.home-sidebar-section > .widget + .widget h2 {
+  margin-top: var(--home-sidebar-section-gap);
+}
+
+
+
+/* ==================================================
+   HOME SIDEBAR LISTS
+   ================================================== */
+
+.home-sidebar ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0 0 0 8px;
+}
+
+.home-sidebar li {
+  list-style: none;
+}
+
+
+
+/* ==================================================
+   POPULAR POSTS
+   ================================================== */
+
+.home-sidebar .popular-posts ul {
+  margin: 0;
+  padding: 0;
+}
+
+.home-sidebar .popular-posts li {
+  position: relative;
+
+  display: block;
+
+  margin:
+    0 0
+    var(--popular-post-item-margin-bottom);
+
+  padding:
+    0 0
+    var(--popular-post-item-margin-bottom);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-sidebar .popular-posts li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: 0;
+}
+
+
+
+/* ==================================================
+   POPULAR POSTS TITLE
+   ================================================== */
+
+.home-sidebar .popular-posts .item-title {
+  margin: 0;
+
+  font-size: var(--popular-post-title-size);
+  line-height: var(--popular-post-title-line-height);
+}
+
+.home-sidebar .popular-posts .item-title a {
+  color: var(--color-link);
+
+  text-decoration: none;
+
+  font-weight: var(--popular-post-title-weight);
+}
+
+
+
+/* ==================================================
+   POPULAR POSTS ABSTRACT / SNIPPET
+   ================================================== */
+
+.home-sidebar .popular-post-abstract,
+.home-sidebar .popular-posts .item-snippet {
+  margin-top: 4px;
+
+  color: var(--color-text);
+
+  font-size: var(--popular-post-abstract-size);
+  line-height: var(--popular-post-abstract-line-height);
+}
+
+
+
+/* ==================================================
+   POPULAR POSTS THUMBNAIL
+   ================================================== */
+
+.home-sidebar .popular-posts .item-thumbnail {
+  float: right;
+
+  width: var(--popular-post-thumbnail-width);
+
+  margin:
+    0 0 4px
+    var(--popular-post-item-gap);
+}
+
+.home-sidebar .popular-posts .item-thumbnail img {
+  display: block;
+
+  width: 100%;
+  height: var(--popular-post-thumbnail-height);
+
+  object-fit: cover;
+}
+
+
+
+/* ==================================================
+   HOME CATEGORY LIST
+   ================================================== */
+
+.home-category-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.home-category-list a {
+  display: block;
+
+  padding: 4px 0;
+
+  border: 0;
+
+  color: var(--color-link);
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.home-category-name {
+  display: inline;
+}
+
+.home-category-count {
+  display: inline;
+
+  margin-left: 6px;
+
+  color: var(--color-muted);
+
+  font-size: 0.8rem;
+
+  white-space: nowrap;
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST
+   ================================================== */
+
+.article-list-item {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    var(--article-list-thumbnail-width);
+
+  gap: var(--article-list-item-gap);
+
+  align-items: start;
+
+  margin-bottom: var(--article-list-item-margin-bottom);
+
+  padding-bottom: var(--article-list-item-padding-bottom);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-list-content {
+  min-width: 0;
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST META
+   ================================================== */
+
+.article-list-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 4px 12px;
+
+  margin-bottom: var(--article-list-meta-margin-bottom);
+
+  color: var(--color-muted);
+
+  font-size: var(--article-list-meta-size);
+
+  line-height: 1.4;
+}
+
+.article-list-meta a {
+  color: var(--color-link);
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST TITLE
+   ================================================== */
+
+.article-list-item h3 {
+  margin:
+    0 0
+    var(--article-list-title-margin-bottom);
+
+  font-size: var(--article-list-title-size);
+
+  font-weight: var(--article-list-title-weight);
+
+  line-height: var(--article-list-title-line-height);
+}
+
+.article-list-item h3 a {
+  color: var(--color-link);
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST ABSTRACT
+   ================================================== */
+
+.article-list-abstract {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: var(--article-list-abstract-size);
+
+  line-height: var(--article-list-abstract-line-height);
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST THUMBNAIL
+   ================================================== */
+
+.article-list-thumbnail-container {
+  min-width: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.article-list-thumbnail {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.article-list-thumbnail img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: var(--article-list-thumbnail-max-height);
+
+  object-fit: contain;
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST SOURCE
+   ================================================== */
+
+.index-article-source {
+  display: none;
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST NAVIGATION
+   ================================================== */
+
+.article-list-more,
+.blog-pager {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.article-list-more-link,
+.blog-pager a {
+  display: inline-block;
+
+  padding: 8px 24px;
+
+  border: 1px solid var(--color-border);
+
+  background: var(--color-surface);
+
+  color: var(--color-link);
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  text-decoration: none;
+}
+
+.article-list-more-link:hover,
+.blog-pager a:hover {
+  background: var(--color-hover);
+}
+
+
+
+/* ==================================================
+   ARTICLE LIST - MOBILE
+   ================================================== */
+
+@media (max-width: 800px) {
+
+  .article-list-item {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .article-list-thumbnail-container {
+    justify-content: flex-start;
+  }
+
+  .article-list-thumbnail {
+    justify-content: flex-start;
+  }
+
+  .article-list-thumbnail img {
+    max-width: 100%;
+
+    max-height:
+      var(--article-list-mobile-thumbnail-max-height);
+  }
+
+}
