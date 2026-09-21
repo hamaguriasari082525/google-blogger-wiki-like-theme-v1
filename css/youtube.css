@@ -1,0 +1,43 @@
+/* ==================================================
+   YOUTUBE VIDEO
+   ================================================== */
+
+
+/* --------------------------------------------------
+   YouTube Video
+   -------------------------------------------------- */
+
+.article-video {
+  width: 100%;
+
+  max-width: var(--article-video-max-width);
+
+  margin: 24px auto 0;
+}
+
+.article-video iframe {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  max-height: var(--article-video-max-height);
+
+  height: auto;
+
+  border: 0;
+}
+
+.article-video-title {
+  max-width: 900px;
+
+  margin: 8px auto 24px;
+
+  color: var(--color-text);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  text-align: center;
+}
