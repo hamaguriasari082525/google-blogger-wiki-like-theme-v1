@@ -1,111 +1,71 @@
+/* ==================================================
+   ARTICLE
+   ================================================== */
+
+
+/* ==================================================
+   ARTICLE VARIABLES
+   ================================================== */
+
 :root {
-  /* ==================================================
-     ARTICLE PARAMETERS
-     ================================================== */
 
-  /* ------------------------------------------------
-     Layout
-     ------------------------------------------------ */
+  /* --------------------------------------------------
+     Article Title
+     -------------------------------------------------- */
 
-  --article-max-width: 900px;
-
-  /* ------------------------------------------------
-     Typography
-     ------------------------------------------------ */
-
-  --body-font-family:
-    "メイリオ",
-    Meiryo,
-    "ヒラギノ角ゴ Pro W3",
-    Hiragino Kaku Gothic Pro,
-    "ＭＳ Ｐゴシック",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Noto Sans JP",
-    "Hiragino Sans",
-    "Yu Gothic",
-    sans-serif;
-
-  --article-font-size: 1rem;
-  --article-line-height: 1.5;
-  --article-font-weight: 400;
-
-  /* ------------------------------------------------
-     Article Header
-     ------------------------------------------------ */
-
-  --article-header-margin-bottom: 24px;
   --article-title-size: 2.2rem;
   --article-title-weight: 700;
   --article-title-line-height: 1.3;
+
   --article-title-padding-bottom: 8px;
 
-  /* ------------------------------------------------
+  --article-header-margin-bottom: 24px;
+
+
+  /* --------------------------------------------------
+     Article Body
+     -------------------------------------------------- */
+
+  --article-font-size: 1rem;
+  --article-line-height: 1.5;
+
+  --article-font-weight: 400;
+
+
+  /* --------------------------------------------------
      Article Meta
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --article-meta-font-size: 1rem;
   --article-meta-line-height: 1.6;
   --article-meta-color: #54595d;
+  --article-meta-border: #c8ccd1;
   --article-meta-gap: 12px;
 
-  /* ------------------------------------------------
-     Headings
-     ------------------------------------------------ */
 
-  --h2-size: 1.55rem;
-  --h2-weight: 600;
-  --h2-line-height: 1.4;
-  --h2-margin-top: 2.2em;
-  --h2-margin-bottom: 0.8em;
-  --h2-padding-bottom: 5px;
+  /* --------------------------------------------------
+     Article Image
+     -------------------------------------------------- */
 
-  --h3-size: 1.2rem;
-  --h3-weight: 700;
-  --h3-line-height: 1.4;
-  --h3-margin-top: 1.8em;
-  --h3-margin-bottom: 0.6em;
-
-  /* ------------------------------------------------
-     Paragraphs
-     ------------------------------------------------ */
-
-  --paragraph-margin-bottom: 1em;
-
-  /* ------------------------------------------------
-     Lists
-     ------------------------------------------------ */
-
-  --list-margin-top: 0.5em;
-  --list-margin-bottom: 1.2em;
-
-  /* ------------------------------------------------
-     Blockquote
-     ------------------------------------------------ */
-
-  --blockquote-margin-top: 1.5em;
-  --blockquote-margin-bottom: 1.5em;
-  --blockquote-padding-top: 10px;
-  --blockquote-padding-right: 16px;
-  --blockquote-padding-bottom: 10px;
-  --blockquote-padding-left: 16px;
-  --blockquote-border-width: 4px;
-  --blockquote-font-color: #54595d;
-
-  /* ------------------------------------------------
-     Images
-     ------------------------------------------------ */
-
+  --article-image-max-width: 533px;
   --article-image-max-height: 300px;
   --article-image-margin-top: 1.5em;
   --article-image-margin-bottom: 1.5em;
   --article-image-caption-size: 0.85rem;
   --article-image-caption-color: #54595d;
 
-  /* ------------------------------------------------
+
+  /* --------------------------------------------------
+     Article Video
+     -------------------------------------------------- */
+
+  --article-video-max-width: 533px;
+  --article-video-max-height: 300px;
+
+
+  /* --------------------------------------------------
      Auto Gallery
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --gallery-gap: 12px;
   --gallery-item-width: 210px;
@@ -113,167 +73,227 @@
   --gallery-margin-top: 40px;
   --gallery-margin-bottom: 40px;
 
-  /* ------------------------------------------------
+
+  /* --------------------------------------------------
+     H2
+     -------------------------------------------------- */
+
+  --h2-size: 1.55rem;
+  --h2-weight: 600;
+  --h2-line-height: 1.4;
+
+  --h2-margin-top: 2.2em;
+  --h2-margin-bottom: 0.8em;
+
+  --h2-padding-bottom: 5px;
+
+
+  /* --------------------------------------------------
+     H3
+     -------------------------------------------------- */
+
+  --h3-size: 1.2rem;
+  --h3-weight: 700;
+  --h3-line-height: 1.4;
+
+  --h3-margin-top: 1.8em;
+  --h3-margin-bottom: 0.6em;
+
+
+  /* --------------------------------------------------
+     Paragraph
+     -------------------------------------------------- */
+
+  --paragraph-margin-bottom: 1em;
+
+
+  /* --------------------------------------------------
+     Lists
+     -------------------------------------------------- */
+
+  --list-margin-top: 0.5em;
+  --list-margin-bottom: 1.2em;
+
+
+  /* --------------------------------------------------
+     Blockquote
+     -------------------------------------------------- */
+
+  --blockquote-margin-top: 1.5em;
+  --blockquote-margin-bottom: 1.5em;
+
+  --blockquote-padding-top: 10px;
+  --blockquote-padding-right: 16px;
+  --blockquote-padding-bottom: 10px;
+  --blockquote-padding-left: 16px;
+
+  --blockquote-border-width: 4px;
+
+  --blockquote-font-color: #54595d;
+
+
+  /* --------------------------------------------------
      Inline Code
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --inline-code-padding-vertical: 2px;
   --inline-code-padding-horizontal: 4px;
+
   --inline-code-size: 0.9em;
 
-  /* ------------------------------------------------
-     Code Block
-     ------------------------------------------------ */
 
-  --code-margin-top: 0.5em;
-  --code-margin-bottom: 1.5em;
+  /* --------------------------------------------------
+     Code Block
+     -------------------------------------------------- */
+
+  --code-font-size: 0.88rem;
+  --code-line-height: 1.65;
+
   --code-padding-top: 14px;
   --code-padding-right: 16px;
   --code-padding-bottom: 14px;
   --code-padding-left: 16px;
-  --code-font-size: 0.88rem;
-  --code-line-height: 1.65;
+
+  --code-margin-top: 0.5em;
+  --code-margin-bottom: 1.5em;
+
   --code-tab-size: 4;
 
-  /* ------------------------------------------------
+
+  /* --------------------------------------------------
      Prism Toolbar
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --toolbar-button-size: 0.8rem;
+
   --toolbar-button-padding-vertical: 5px;
   --toolbar-button-padding-horizontal: 9px;
 
-  /* ------------------------------------------------
+
+  /* --------------------------------------------------
      Notice
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --notice-margin-top: 1.5em;
   --notice-margin-bottom: 1.5em;
+
   --notice-padding-top: 12px;
   --notice-padding-right: 16px;
   --notice-padding-bottom: 12px;
   --notice-padding-left: 16px;
+
   --notice-border-left-width: 4px;
 
-  /* ------------------------------------------------
+
+  /* --------------------------------------------------
      Table
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --table-font-size: 0.92rem;
+
   --table-cell-padding-vertical: 7px;
   --table-cell-padding-horizontal: 10px;
 
-  /* ------------------------------------------------
+
+  /* --------------------------------------------------
      Infobox
-     ------------------------------------------------ */
+     -------------------------------------------------- */
 
   --infobox-width: 280px;
+
   --infobox-margin-bottom: 20px;
   --infobox-margin-left: 24px;
+
   --infobox-font-size: 0.88rem;
 
-  /* ------------------------------------------------
-     Video
-     ------------------------------------------------ */
-
-  --article-video-max-width: 533px;
-  --article-video-max-height: 300px;
-
-  /* ==================================================
-     ARTICLE COLORS
-     ================================================== */
-
-  --color-paper: #fcfcfc;
-  --color-text: #202122;
-  --color-muted: #54595d;
-  --color-link: #0645ad;
-  --color-border: #a2a9b1;
-  --color-border-light: #c8ccd1;
-  --color-code: #f8f9fa;
-  --color-hover: #eaecf0;
-  --color-page: #f1f1f1;
-  --color-table-header: #eaecf0;
-  --color-table-alt: #f8f9fa;
 }
 
-/* ==================================================
-   ARTICLE
-   Article-related styles start here.
-   ================================================== */
-
 
 /* ==================================================
-   01. Article Base
+   ARTICLE LAYOUT
    ================================================== */
-
-/* ------------------------------------------------
-   Article Layout
-   ------------------------------------------------ */
 
 .article-main {
   min-width: 0;
   max-width: var(--article-max-width);
+
   background: var(--color-paper);
 }
 
-/* ------------------------------------------------
-   Article Header
-   ------------------------------------------------ */
+
+/* ==================================================
+   ARTICLE HEADER
+   ================================================== */
 
 .article-header {
   margin-bottom: var(--article-header-margin-bottom);
 }
 
+
 .article-title {
   margin: 0;
+
   font-size: var(--article-title-size);
   font-weight: var(--article-title-weight);
   line-height: var(--article-title-line-height);
+
   border-bottom: 1px solid var(--color-border);
+
   padding-bottom: var(--article-title-padding-bottom);
 }
 
+
 .article-lead {
   margin-top: 16px;
+
   font-size: var(--article-font-size);
 }
 
-/* ------------------------------------------------
-   Article Meta
-   ------------------------------------------------ */
+
+/* ==================================================
+   ARTICLE META
+   ================================================== */
 
 .article-meta {
   display: flex;
   flex-wrap: wrap;
   gap: var(--article-meta-gap);
+
   margin-top: 12px;
+
   color: var(--article-meta-color);
   font-size: var(--article-meta-font-size);
   line-height: var(--article-meta-line-height);
 }
 
+
 .article-meta-item {
   display: inline;
 }
+
 
 .article-meta-label {
   font-weight: 600;
 }
 
+
 .article-meta a {
   color: var(--color-link);
 }
+
 
 .article-meta a:hover {
   text-decoration: underline;
 }
 
-/* ------------------------------------------------
-   Article Body
-   ------------------------------------------------ */
+
+/* ==================================================
+   ARTICLE BODY
+   ================================================== */
 
 .article-body {
   font-family: var(--body-font-family);
+
   font-size: var(--article-font-size);
   font-weight: var(--article-font-weight);
   line-height: var(--article-line-height);
@@ -281,43 +301,47 @@
 
 
 /* ==================================================
-   02. Article Typography
+   HEADINGS
    ================================================== */
-
-/* ------------------------------------------------
-   Headings
-   ------------------------------------------------ */
 
 .article-body h2 {
   margin-top: var(--h2-margin-top);
   margin-bottom: var(--h2-margin-bottom);
+
   padding-bottom: var(--h2-padding-bottom);
+
   border-bottom: 1px solid var(--color-border);
+
   font-size: var(--h2-size);
   font-weight: var(--h2-weight);
   line-height: var(--h2-line-height);
 }
 
+
 .article-body h3 {
   margin-top: var(--h3-margin-top);
   margin-bottom: var(--h3-margin-bottom);
+
   border-bottom: 0;
+
   font-size: var(--h3-size);
   font-weight: var(--h3-weight);
   line-height: var(--h3-line-height);
 }
 
-/* ------------------------------------------------
-   Paragraphs
-   ------------------------------------------------ */
+
+/* ==================================================
+   PARAGRAPHS
+   ================================================== */
 
 .article-body p {
   margin: 0 0 var(--paragraph-margin-bottom);
 }
 
-/* ------------------------------------------------
-   Lists
-   ------------------------------------------------ */
+
+/* ==================================================
+   LISTS
+   ================================================== */
 
 .article-body ul,
 .article-body ol {
@@ -325,553 +349,220 @@
   margin-bottom: var(--list-margin-bottom);
 }
 
-/* ------------------------------------------------
-   Blockquote
-   ------------------------------------------------ */
+
+/* ==================================================
+   BLOCKQUOTE
+   ================================================== */
 
 .article-body blockquote {
   margin:
     var(--blockquote-margin-top)
     0
     var(--blockquote-margin-bottom);
+
   padding:
     var(--blockquote-padding-top)
     var(--blockquote-padding-right)
     var(--blockquote-padding-bottom)
     var(--blockquote-padding-left);
+
   border-left:
     var(--blockquote-border-width)
     solid
     var(--color-border);
+
   background: var(--color-code);
+
   color: var(--blockquote-font-color);
 }
 
 
 /* ==================================================
-   03. Article Media
+   IMAGES
    ================================================== */
 
-/* ------------------------------------------------
-   Images
-   ------------------------------------------------ */
-
 .article-image {
-  margin: var(--article-image-margin-top) 0 var(--article-image-margin-bottom);
+  margin:
+    var(--article-image-margin-top)
+    0
+    var(--article-image-margin-bottom);
+
   text-align: center;
 }
+
 
 .article-image img {
   display: block;
+
   width: auto !important;
   height: auto !important;
+
   max-width: 100% !important;
   max-height: var(--article-image-max-height) !important;
+
   margin: 0 auto;
+
   object-fit: contain;
+
   cursor: zoom-in;
 }
 
+
 .article-image-caption {
   margin-top: 6px;
+
   color: var(--article-image-caption-color);
+
   font-size: var(--article-image-caption-size);
   line-height: 1.5;
+
   text-align: left;
-}
-
-/* ------------------------------------------------
-   Image Modal
-   ------------------------------------------------ */
-
-.image-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.85);
-  cursor: zoom-out;
-}
-
-.image-modal img {
-  display: block;
-  max-width: 95vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.image-modal-caption {
-  position: absolute;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%) translateY(8px);
-  max-width: min(720px, calc(100vw - 48px));
-  padding: 8px 14px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.72);
-  color: #fff;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  text-align: center;
-  pointer-events: none;
-  opacity: 0;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
-
-.image-modal:has(img:hover) .image-modal-caption {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.image-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  border: 0;
-  background: transparent;
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-/* ------------------------------------------------
-   YouTube Video
-   ------------------------------------------------ */
-
-.article-video {
-  width: 100%;
-  max-width: var(--article-video-max-width);
-  margin: 24px auto 0;
-}
-
-.article-video iframe {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: var(--article-video-max-height);
-  height: auto;
-  border: 0;
-}
-
-.article-video-title {
-  max-width: 900px;
-  margin: 8px auto 24px;
-  color: var(--color-text);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  text-align: center;
 }
 
 
 /* ==================================================
-   04. Article Gallery
+   AUTO GALLERY
    ================================================== */
-
-/* ------------------------------------------------
-   Gallery
-   ------------------------------------------------ */
 
 .article-gallery {
   position: relative;
-  margin: var(--gallery-margin-top) 0 var(--gallery-margin-bottom);
+
+  margin:
+    var(--gallery-margin-top)
+    0
+    var(--gallery-margin-bottom);
 }
+
 
 .article-gallery-title {
   margin-bottom: 12px;
+
   border-bottom: 1px solid var(--color-border);
 }
 
+
 .article-gallery-viewport {
   position: relative;
+
   overflow: hidden;
 }
+
 
 .article-gallery-track {
   display: flex;
   gap: var(--gallery-gap);
+
   overflow-x: auto;
+
   scroll-behavior: smooth;
+
   scrollbar-width: none;
+
   cursor: grab;
+
   user-select: none;
+
   -webkit-overflow-scrolling: touch;
 }
+
 
 .article-gallery-track::-webkit-scrollbar {
   display: none;
 }
 
+
 .article-gallery-track.is-dragging {
   cursor: grabbing;
+
   scroll-behavior: auto;
 }
 
+
 .article-gallery-item {
   flex: 0 0 var(--gallery-item-width);
+
   margin: 0;
+
   cursor: zoom-in;
 }
 
+
 .article-gallery-item img {
   display: block;
+
   width: 100%;
   height: var(--gallery-image-height);
+
   object-fit: cover;
 }
 
+
 .article-gallery-item figcaption {
   margin-top: 5px;
+
   color: var(--color-muted);
+
   font-size: 0.8rem;
   line-height: 1.4;
 }
 
-/* ------------------------------------------------
-   Gallery Navigation
-   ------------------------------------------------ */
+
+/* ==================================================
+   GALLERY NAVIGATION
+   ================================================== */
 
 .article-gallery-prev,
 .article-gallery-next {
   position: absolute;
+
   top: 50%;
   z-index: 2;
+
   width: 38px;
   height: 52px;
+
   transform: translateY(-50%);
+
   border: 0;
   border-radius: 3px;
+
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
+
   font-size: 1.8rem;
   line-height: 1;
+
   cursor: pointer;
 }
+
 
 .article-gallery-prev {
   left: 6px;
 }
 
+
 .article-gallery-next {
   right: 6px;
 }
+
 
 .article-gallery-prev:hover,
 .article-gallery-next:hover {
   background: rgba(0, 0, 0, 0.75);
 }
 
+
 .article-gallery-prev:disabled,
 .article-gallery-next:disabled {
   opacity: 0.25;
+
   cursor: default;
 }
 
 
 /* ==================================================
-   05. Article Reference Engine
+   INLINE CODE
    ================================================== */
-
-/*
- * 参考文献
- * 脚注
- * 図
- * 表
- * 数式
- * コード
- *
- * 共通Reference Engine用
- */
-
-/* ------------------------------------------------
-   References
-   ------------------------------------------------ */
-
-.article-reference-section-title {
-  margin: 0 0 16px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-/*
- * 文献・脚注
- *
- * 個別の横線は入れない。
- */
-
-.article-references .article-target {
-  margin: 10px 0;
-  line-height: 1.7;
-}
-
-/* ------------------------------------------------
-   Target
-   ------------------------------------------------ */
-
-.article-target {
-  position: relative;
-}
-
-/*
- * Targetの番号
- *
- * 図1
- * 表1
- * 式(1)
- * コード例1
- * [1]
- * など
- */
-
-.article-target-number {
-  display: inline-block;
-  margin-right: 6px;
-}
-
-/* ------------------------------------------------
-   Reference Link
-   ------------------------------------------------ */
-
-/*
- * 基本は通常の本文位置。
- *
- * 図・表・数式・コードは
- * この状態で表示される。
- */
-
-.article-ref-link {
-  position: relative;
-  color: var(--color-link);
-  text-decoration: none;
-}
-
-/*
- * Reference / Footnoteのみ上付き
- */
-
-.article-ref-link.is-superscript {
-  vertical-align: super;
-  font-size: 0.75em;
-  line-height: 0;
-}
-
-.article-ref-link:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------------------------
-   Reference Hover Preview
-   ------------------------------------------------ */
-
-.article-ref-preview,
-.article-reference-preview {
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 10px);
-  z-index: 1000;
-  width: 300px;
-  padding: 10px 12px;
-  transform: translateX(-50%);
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  color: var(--color-text);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition:
-    opacity 0.15s ease,
-    visibility 0.15s ease;
-}
-
-/*
- * 本文側
- * Target側
- *
- * どちらもホバーでプレビュー表示
- */
-
-.article-ref-link:hover .article-ref-preview,
-.article-reference-back:hover .article-reference-preview {
-  opacity: 1;
-  visibility: visible;
-}
-
-/*
- * コードはプレビューなし
- */
-
-.article-ref-link[data-preview="off"] .article-ref-preview {
-  display: none;
-}
-
-/* ------------------------------------------------
-   Target → 本文
-   ------------------------------------------------ */
-
-.article-reference-back {
-  position: relative;
-  margin-left: 8px;
-  color: var(--color-link);
-  text-decoration: none;
-  font-size: 0.85em;
-}
-
-.article-reference-back:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------------------------
-   Figure
-   ------------------------------------------------ */
-
-/*
- * 図のタイトル・説明は
- * 図の下に配置する。
- */
-
-.article-figure {
-  margin: 0;
-}
-
-.article-figure figcaption {
-  margin-top: 8px;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  text-align: left;
-}
-
-.article-figure .article-target-number {
-  margin-right: 6px;
-}
-
-/* ------------------------------------------------
-   Table
-   ------------------------------------------------ */
-
-/*
- * 表タイトルは
- * 表の上に配置する。
- */
-
-.article-table-title {
-  margin-bottom: 3px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.article-table-title .article-target-number {
-  margin-right: 6px;
-}
-
-/* ------------------------------------------------
-   Legacy Compatibility
-   ------------------------------------------------ */
-
-.article-reference {
-  margin: 8px 0;
-  line-height: 1.7;
-}
-
-.article-reference-number {
-  margin-right: 6px;
-  color: var(--color-link);
-  text-decoration: none;
-}
-
-.article-reference-number:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------------------------
-   Equation
-   ------------------------------------------------ */
-
-.article-equation {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.article-equation .equation-content {
-  flex: 1;
-  text-align: center;
-}
-
-.article-equation .article-target-number {
-  position: absolute;
-  right: 0;
-  margin: 0;
-}
-
-.equation-content {
-  display: inline-block;
-}
-
-/* ------------------------------------------------
-   Code Target
-   ------------------------------------------------ */
-
-/*
- * Reference Engineの番号が
- * コードブロックの直前に表示されるため、
- * 少し余白を確保する。
- */
-
-.article-target[data-type="code"] {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-/* ------------------------------------------------
-   Table Target
-   ------------------------------------------------ */
-
-.article-target[data-type="table"] {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-/* ------------------------------------------------
-   Figure Target
-   ------------------------------------------------ */
-
-.article-target[data-type="fig"] {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-/* ------------------------------------------------
-   Footnote Target
-   ------------------------------------------------ */
-
-.article-footnotes .article-target {
-  margin: 8px 0;
-  line-height: 1.7;
-}
-
-
-/* ==================================================
-   06. Article Code
-   ================================================== */
-
-/* ------------------------------------------------
-   Inline Code
-   ------------------------------------------------ */
 
 .article-body p code,
 .article-body li code,
@@ -883,8 +574,11 @@
   padding:
     var(--inline-code-padding-vertical)
     var(--inline-code-padding-horizontal);
+
   background: var(--color-code);
+
   border: 1px solid var(--color-border-light);
+
   font-family:
     "SFMono-Regular",
     "Cascadia Code",
@@ -892,43 +586,57 @@
     Consolas,
     "Liberation Mono",
     monospace;
+
   font-size: var(--inline-code-size);
 }
 
-/* ------------------------------------------------
-   Code Block
-   ------------------------------------------------ */
+
+/* ==================================================
+   CODE BLOCK
+   ================================================== */
 
 .article-body pre[class*="language-"] {
   position: relative;
+
   margin:
     var(--code-margin-top)
     0
     var(--code-margin-bottom);
+
   padding:
     var(--code-padding-top)
     var(--code-padding-right)
     var(--code-padding-bottom)
     var(--code-padding-left);
+
   background: var(--color-code) !important;
+
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+
   overflow-x: auto;
   overflow-y: hidden;
+
   white-space: pre;
+
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
 }
 
+
 .article-body pre[class*="language-"] > code {
   display: block;
+
   padding: 0 !important;
   margin: 0;
+
   background: transparent !important;
+
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+
   font-family:
     "SFMono-Regular",
     "Cascadia Code",
@@ -936,33 +644,45 @@
     Consolas,
     "Liberation Mono",
     monospace;
+
   font-size: var(--code-font-size);
   line-height: var(--code-line-height);
+
   white-space: pre;
+
   word-break: normal;
   overflow-wrap: normal;
+
   tab-size: var(--code-tab-size);
 }
 
-/* ------------------------------------------------
-   Prism Toolbar
-   ------------------------------------------------ */
+
+/* ==================================================
+   PRISM TOOLBAR
+   ================================================== */
 
 .article-body .toolbar {
   opacity: 1;
 }
 
+
 .article-body .toolbar .toolbar-item button {
   padding:
     var(--toolbar-button-padding-vertical)
     var(--toolbar-button-padding-horizontal);
+
   border: 0;
+
   background: transparent;
+
   color: #72777d;
+
   font-family: inherit;
   font-size: var(--toolbar-button-size);
+
   cursor: pointer;
 }
+
 
 .article-body .toolbar .toolbar-item button:hover {
   background: var(--color-hover);
@@ -971,231 +691,153 @@
 
 
 /* ==================================================
-   07. Article Components
+   NOTICE
    ================================================== */
-
-/* ------------------------------------------------
-   Notice
-   ------------------------------------------------ */
 
 .notice {
   margin:
     var(--notice-margin-top)
     0
     var(--notice-margin-bottom);
+
   padding:
     var(--notice-padding-top)
     var(--notice-padding-right)
     var(--notice-padding-bottom)
     var(--notice-padding-left);
+
   border: 1px solid var(--color-border);
+
   border-left:
     var(--notice-border-left-width)
     solid
     #3366cc;
+
   background: var(--color-code);
 }
+
 
 .notice p {
   margin: 5px 0 0;
 }
 
-/* ------------------------------------------------
-   Wikipedia-like Table
-   ------------------------------------------------ */
+
+/* ==================================================
+   WIKIPEDIA-LIKE TABLE
+   ================================================== */
 
 .wikitable {
   margin: 0.5em 0;
+
   border-collapse: collapse;
+
   background: var(--color-page);
+
   font-size: var(--table-font-size);
 }
+
 
 .wikitable th,
 .wikitable td {
   border: 1px solid var(--color-border);
+
   padding:
     var(--table-cell-padding-vertical)
     var(--table-cell-padding-horizontal);
+
   text-align: left;
   vertical-align: top;
 }
 
+
 .wikitable th {
   background: var(--color-table-header);
+
   font-weight: 600;
 }
+
 
 .wikitable tr:nth-child(even) {
   background: var(--color-table-alt);
 }
 
-/* ------------------------------------------------
-   Infobox
-   ------------------------------------------------ */
+
+/* ==================================================
+   INFOBOX
+   ================================================== */
 
 .infobox {
   float: right;
+
   width: var(--infobox-width);
+
   margin:
     0
     0
     var(--infobox-margin-bottom)
     var(--infobox-margin-left);
+
   border: 1px solid var(--color-border);
+
   background: var(--color-code);
+
   font-size: var(--infobox-font-size);
 }
 
+
 .infobox-title {
   padding: 8px;
+
   background: var(--color-table-header);
+
   text-align: center;
+
   font-weight: 600;
 }
 
+
 .infobox table {
   width: 100%;
+
   border-collapse: collapse;
 }
+
 
 .infobox th,
 .infobox td {
   padding: 6px 8px;
+
   border-top: 1px solid var(--color-border-light);
+
   vertical-align: top;
 }
 
+
 .infobox th {
   width: 35%;
+
   font-weight: 600;
 }
 
 
 /* ==================================================
-   08. Article Comments
+   ARTICLE COMMENTS
    ================================================== */
-
-/* ------------------------------------------------
-   Article Comments
-   ------------------------------------------------ */
 
 .article-comments {
   margin-top: 40px;
+
   padding-top: 24px;
+
   border-top: 1px solid var(--color-border);
 }
 
+
 .article-comments-title {
   margin-bottom: 20px;
+
   font-size: 1.25rem;
   font-weight: 700;
+
   color: var(--color-text);
-}
-
-
-/* ==================================================
-   09. Article Reference Card
-   ================================================== */
-
-/* ------------------------------------------------
-   Reference Card
-   ------------------------------------------------ */
-
-.article-ref-card {
-  margin: 24px 0;
-  padding: 0;
-  background: #fcfcfc;
-  border: 1px solid #c8ccd1;
-  box-sizing: border-box;
-}
-
-/* ------------------------------------------------
-   Header
-   ------------------------------------------------ */
-
-.article-ref-header {
-  padding: 8px 16px;
-  background: #eaecf0;
-  border-bottom: 1px solid #c8ccd1;
-  color: #202122;
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-/* ------------------------------------------------
-   Body
-   ------------------------------------------------ */
-
-.article-ref-body {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  column-gap: 20px;
-  padding: 16px;
-  box-sizing: border-box;
-}
-
-/* ------------------------------------------------
-   Image
-   ------------------------------------------------ */
-
-.article-ref-image-link {
-  display: block;
-  grid-column: 1;
-}
-
-.article-ref-image {
-  display: block;
-  width: 180px;
-  height: 120px;
-  object-fit: cover;
-}
-
-/* ------------------------------------------------
-   Information
-   ------------------------------------------------ */
-
-.article-ref-info {
-  grid-column: 2;
-  min-width: 0;
-}
-
-/* ------------------------------------------------
-   Title
-   ------------------------------------------------ */
-
-.article-ref-title {
-  display: block;
-  color: var(--color-link);
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.4;
-  text-decoration: none;
-}
-
-.article-ref-title:hover {
-  text-decoration: underline;
-}
-
-/* ------------------------------------------------
-   Meta
-   ------------------------------------------------ */
-
-.article-ref-meta {
-  margin-top: 6px;
-  color: var(--color-muted);
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-/* ------------------------------------------------
-   Abstract
-   ------------------------------------------------ */
-
-.article-ref-abstract {
-  margin-top: 8px;
-  color: var(--color-text);
-  font-size: 0.85rem;
-  line-height: 1.55;
 }

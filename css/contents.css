@@ -17,14 +17,6 @@
   --contents-sublevel-indent: 16px;
   --contents-sticky-top: 20px;
   --contents-label-weight: 500;
-
-  /* ------------------------------------------------
-     Colors
-     ------------------------------------------------ */
-
-  --color-border-light: #c8ccd1;
-  --color-link: #0645ad;
-  --color-hover: #eaecf0;
 }
 
 .contents {
