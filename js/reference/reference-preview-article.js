@@ -2,7 +2,7 @@
 
 (function () {
   'use strict';
-
+  
   function cleanClone (clone) {
     clone.removeAttribute ('id');
     clone.removeAttribute ('data-type');
@@ -43,7 +43,13 @@
 
     cleanClone (clone);
 
-    content.appendChild (clone);
+    const wrapper = document.createElement ('div');
+
+    wrapper.className = 'article-reference-preview-article';
+
+    wrapper.appendChild (clone);
+
+    content.appendChild (wrapper);
   }
 
   function register () {
