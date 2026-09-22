@@ -32,6 +32,7 @@
       ["Reference Layout Equation", window.articleReferenceLayoutEquation],
       ["Reference Layout Code", window.articleReferenceLayoutCode],
       ["Reference Layout Video", window.articleReferenceLayoutVideo],
+      ["Reference Layout Article", window.articleReferenceLayoutArticle],
       ["Reference Link", window.articleReferenceLink],
       ["Reference Sup", window.articleReferenceSup],
       ["Reference Backlink", window.articleReferenceBacklink],
