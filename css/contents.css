@@ -20,44 +20,51 @@
 }
 
 /* ==================================================
-   CONTENTS
+   Contents
    ================================================== */
+
+/* --------------------------------------------------
+   Contents container
+   -------------------------------------------------- */
 
 .contents {
   position: sticky;
-
   top: var(--contents-sticky-top);
-
   max-height: calc(100vh - 60px);
-
   align-self: start;
-
-  min-width: 0;
 
   font-size: var(--contents-font-size);
 
   overflow-y: auto;
 }
 
+
+/* --------------------------------------------------
+   Contents title
+   -------------------------------------------------- */
+
 .contents-title {
   min-width: 0;
 
   margin: 0 0 var(--contents-title-margin-bottom);
 
-  padding-bottom: var(--contents-title-padding-bottom);
-
   font-size: var(--contents-title-size);
-
   font-weight: var(--contents-title-weight);
 
   border-bottom: 1px solid var(--color-border-light);
+
+  padding-bottom: var(--contents-title-padding-bottom);
 }
+
+
+/* --------------------------------------------------
+   Contents list
+   -------------------------------------------------- */
 
 .contents ul {
   list-style: none;
 
   margin: 0;
-
   padding: 0;
 }
 
@@ -65,44 +72,55 @@
   margin: var(--contents-item-margin);
 }
 
+
+/* --------------------------------------------------
+   Contents links
+   -------------------------------------------------- */
+
 .contents li a {
   display: block;
 
   padding: var(--contents-link-padding);
 
   color: var(--color-link);
-
   font-weight: var(--contents-label-weight);
 }
 
 .contents li a:hover {
   background: var(--color-hover);
-
   text-decoration: none;
 }
+
+
+/* --------------------------------------------------
+   Contents hierarchy
+   -------------------------------------------------- */
 
 .contents .level-2 {
   padding-left: var(--contents-sublevel-indent);
 }
 
+
+/* --------------------------------------------------
+   Contents top link
+   -------------------------------------------------- */
+
 .contents-top-link {
   color: var(--color-link);
-
   font-weight: var(--contents-label-weight);
 }
 
-/* ==================================================
-   CONTENTS NUMBER
-   ================================================== */
+
+/* --------------------------------------------------
+   Contents numbers
+   -------------------------------------------------- */
 
 .article-section-number {
   margin-right: 6px;
-
   white-space: nowrap;
 }
 
 .contents-number {
   margin-right: 6px;
-
   white-space: nowrap;
 }
