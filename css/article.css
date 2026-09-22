@@ -1,3 +1,5 @@
+/* article.css */
+
 /* ==================================================
    ARTICLE
    ================================================== */
@@ -721,45 +723,6 @@
   margin: 5px 0 0;
 }
 
-
-/* ==================================================
-   WIKIPEDIA-LIKE TABLE
-   ================================================== */
-
-.wikitable {
-  margin: 0.5em 0;
-
-  border-collapse: collapse;
-
-  background: var(--color-page);
-
-  font-size: var(--table-font-size);
-}
-
-
-.wikitable th,
-.wikitable td {
-  border: 1px solid var(--color-border);
-
-  padding:
-    var(--table-cell-padding-vertical)
-    var(--table-cell-padding-horizontal);
-
-  text-align: left;
-  vertical-align: top;
-}
-
-
-.wikitable th {
-  background: var(--color-table-header);
-
-  font-weight: 600;
-}
-
-
-.wikitable tr:nth-child(even) {
-  background: var(--color-table-alt);
-}
 
 
 /* ==================================================
