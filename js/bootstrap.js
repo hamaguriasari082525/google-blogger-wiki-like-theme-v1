@@ -35,10 +35,10 @@
     console.log("[Bootstrap] START");
 
     [
-      ["Contents", window.articleContentsBootstrap],
       ["Gallery", window.articleGalleryBootstrap],
-      ["Reference", window.articleReferenceBootstrap],
+      ["Contents", window.articleContentsBootstrap],
       ["Article", window.articleBootstrap]
+      ["Reference", window.articleReferenceBootstrap],
     ].forEach(([name, feature]) => runFeature(name, feature));
 
     state.ready = true;
