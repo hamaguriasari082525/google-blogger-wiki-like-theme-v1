@@ -37,7 +37,7 @@
     [
       ["Gallery", window.articleGalleryBootstrap],
       ["Contents", window.articleContentsBootstrap],
-      ["Article", window.articleBootstrap]
+      ["Article", window.articleBootstrap],
       ["Reference", window.articleReferenceBootstrap],
     ].forEach(([name, feature]) => runFeature(name, feature));
 
