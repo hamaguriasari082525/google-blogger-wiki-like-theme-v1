@@ -2,20 +2,12 @@
 
 (function () {
   'use strict';
-
+  
   function buildArticleLayout () {
     const core = window.articleReferenceCore;
-    const display = window.articleReferenceDisplay;
 
     if (!core) {
       console.warn ('[ReferenceLayoutArticle] Reference Core not found.');
-
-      return;
-    }
-
-    if (!display) {
-      console.warn ('[ReferenceLayoutArticle] Reference Display not found.');
-
       return;
     }
 
@@ -30,23 +22,23 @@
         return;
       }
 
+      const display = target.element.querySelector (
+        ':scope > .article-reference-display'
+      );
+
+      if (!display) {
+        return;
+      }
+
       const title = target.element.querySelector (
-        ':scope > .article-card-header > .article-card-title'
+        ':scope > .article-card .article-card-title'
       );
 
       if (!title) {
         return;
       }
 
-      const displayElement = target.element.querySelector (
-        ':scope > .article-reference-display'
-      );
-
-      if (!displayElement) {
-        return;
-      }
-
-      title.insertBefore (displayElement, title.firstChild);
+      title.insertBefore (display, title.firstChild);
 
       target.element.dataset.referenceLayoutApplied = 'true';
     });
