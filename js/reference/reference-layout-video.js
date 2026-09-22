@@ -56,9 +56,4 @@ window.articleReferenceLayoutVideo={
   process:buildVideoLayout
 };
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildVideoLayout
-);
-
 })();

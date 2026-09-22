@@ -56,9 +56,4 @@ window.articleReferenceLayoutCode={
   process:buildCodeLayout
 };
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildCodeLayout
-);
-
 })();

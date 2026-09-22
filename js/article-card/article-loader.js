@@ -18,14 +18,14 @@
 
     const parser = new DOMParser ();
 
-    const document = parser.parseFromString (html, 'text/html');
+    const doc = parser.parseFromString (html, 'text/html');
 
     return {
       url: url,
-      title: getTitle (document),
-      meta: getMeta (document),
-      abstract: getAbstract (document),
-      image: getImage (document),
+      title: getTitle (doc),
+      meta: getMeta (doc),
+      abstract: getAbstract (doc),
+      image: getImage (doc),
     };
   }
 

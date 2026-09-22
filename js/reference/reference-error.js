@@ -49,10 +49,4 @@ function showErrors(){
 window.articleReferenceError={
   process:showErrors
 };
-
-document.addEventListener(
-  "articleReferencesReady",
-  showErrors
-);
-
 })();

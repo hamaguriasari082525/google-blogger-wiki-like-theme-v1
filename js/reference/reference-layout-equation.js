@@ -58,9 +58,4 @@ window.articleReferenceLayoutEquation={
   process:buildEquationLayout
 };
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildEquationLayout
-);
-
 })();

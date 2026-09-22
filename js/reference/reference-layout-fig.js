@@ -56,9 +56,4 @@ window.articleReferenceLayoutFig={
   process:buildFigLayout
 };
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildFigLayout
-);
-
 })();

@@ -90,9 +90,4 @@ window.articleReferenceBacklink={
   process:buildBacklinks
 };
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildBacklinks
-);
-
 })();

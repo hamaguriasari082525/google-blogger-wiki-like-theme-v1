@@ -56,9 +56,4 @@ window.articleReferenceLayoutTable={
   process:buildTableLayout
 };
 
-document.addEventListener(
-  "articleReferencesReady",
-  buildTableLayout
-);
-
 })();
