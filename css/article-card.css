@@ -1,0 +1,113 @@
+/* ==================================================
+   ARTICLE CARD
+   ================================================== */
+
+/* --------------------------------------------------
+   Card
+   -------------------------------------------------- */
+
+.article-card {
+  margin: 24px 0;
+  padding: 0;
+  background: #fcfcfc;
+  border: 1px solid #c8ccd1;
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------
+   header 
+   -------------------------------------------------- */
+
+.article-card-header {
+  padding: 8px 16px;
+  background: #eaecf0;
+  border-bottom: 1px solid #c8ccd1;
+  color: #202122;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* --------------------------------------------------
+   body
+   -------------------------------------------------- */
+
+.article-card-body {
+  display: grid;
+  grid-template-columns:
+    180px minmax(0, 1fr);
+  column-gap: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------
+   img
+   -------------------------------------------------- */
+
+.article-card-image-link {
+  display: block;
+  grid-column: 1;
+}
+
+.article-card-image {
+  display: block;
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+}
+
+
+/* --------------------------------------------------
+   info
+   -------------------------------------------------- */
+
+.article-card-info {
+  grid-column: 2;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------
+   title
+   -------------------------------------------------- */
+
+.article-card-title {
+  display: block;
+  color: var(--color-link);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.article-card-title:hover {
+  text-decoration: underline;
+}
+
+
+/* --------------------------------------------------
+   metadata
+   -------------------------------------------------- */
+
+.article-card-meta {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+
+/* --------------------------------------------------
+   Abstract
+   -------------------------------------------------- */
+
+.article-card-abstract {
+  margin-top: 8px;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
