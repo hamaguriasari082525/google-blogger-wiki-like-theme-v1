@@ -1,39 +1,90 @@
 // reference-preview-section.js
 
-(function () {
-  "use strict";
+(function(){
+"use strict";
 
-  function buildSectionPreview(target, content) {
-    if (!target?.element) return;
+function getSectionContent(target){
+  const element=target?.element;
+  if(!element)return [];
 
-    const clone = target.element.cloneNode(true);
+  const level=Number(element.tagName.substring(1));
+  if(!level)return [element];
 
-    ["id", "data-type", "data-label", "data-backlink"]
-      .forEach(attr => clone.removeAttribute(attr));
+  const elements=[element];
+  let current=element.nextElementSibling;
 
-    clone.querySelectorAll("[id]")
-      .forEach(element => element.removeAttribute("id"));
-
-    clone.classList.remove("article-target");
-
-    ["data-type", "data-label", "data-backlink"].forEach(attr => clone.removeAttribute(attr));
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "article-reference-preview-section";
-    wrapper.appendChild(clone);
-
-    content.appendChild(wrapper);
-  }
-
-  function register() {
-    if (!window.articleReferencePreview) {
-      console.warn("[SectionPreview] Reference Preview not found.");
-      return;
+  while(current){
+    if(/^H[1-6]$/.test(current.tagName)){
+      const currentLevel=Number(current.tagName.substring(1));
+      if(currentLevel<=level)break;
     }
 
-    window.articleReferencePreview.register("section", buildSectionPreview);
+    elements.push(current);
+    current=current.nextElementSibling;
   }
 
-  window.articleSectionPreview = { register };
-  register();
+  return elements;
+}
+
+function cleanClone(clone){
+  clone.removeAttribute("id");
+  clone.removeAttribute("data-type");
+  clone.removeAttribute("data-label");
+  clone.removeAttribute("data-backlink");
+
+  clone.classList.remove("article-target");
+
+  clone.querySelectorAll("[id]").forEach(function(element){
+    element.removeAttribute("id");
+  });
+
+  clone.querySelectorAll("[data-type]").forEach(function(element){
+    element.removeAttribute("data-type");
+  });
+
+  clone.querySelectorAll("[data-label]").forEach(function(element){
+    element.removeAttribute("data-label");
+  });
+
+  clone.querySelectorAll("[data-backlink]").forEach(function(element){
+    element.removeAttribute("data-backlink");
+  });
+}
+
+function buildSectionPreview(target,content){
+  if(!target?.element)return;
+
+  const elements=getSectionContent(target);
+  const wrapper=document.createElement("div");
+
+  wrapper.className="article-reference-preview-section";
+
+  elements.forEach(function(element){
+    const clone=element.cloneNode(true);
+    cleanClone(clone);
+    wrapper.appendChild(clone);
+  });
+
+  content.appendChild(wrapper);
+}
+
+function register(){
+  if(!window.articleReferencePreview){
+    console.warn("[SectionPreview] Reference Preview not found.");
+    return;
+  }
+
+  window.articleReferencePreview.register(
+    "section",
+    buildSectionPreview
+  );
+}
+
+window.articleSectionPreview={
+  register:register
+};
+
+register();
+
 })();
+
