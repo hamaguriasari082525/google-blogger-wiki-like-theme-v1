@@ -358,67 +358,17 @@
 
 .article-body blockquote {
   margin:
-    var(--blockquote-margin-top)
-    0
-    var(--blockquote-margin-bottom);
+    var(--blockquote-margin-top) 0 var(--blockquote-margin-bottom);
 
   padding:
-    var(--blockquote-padding-top)
-    var(--blockquote-padding-right)
-    var(--blockquote-padding-bottom)
-    var(--blockquote-padding-left);
+    var(--blockquote-padding-top) var(--blockquote-padding-right) var(--blockquote-padding-bottom) var(--blockquote-padding-left);
 
   border-left:
-    var(--blockquote-border-width)
-    solid
-    var(--color-border);
+    var(--blockquote-border-width) solid var(--color-border);
 
   background: var(--color-code);
 
   color: var(--blockquote-font-color);
-}
-
-
-/* ==================================================
-   IMAGES
-   ================================================== */
-
-.article-image {
-  margin:
-    var(--article-image-margin-top)
-    0
-    var(--article-image-margin-bottom);
-
-  text-align: center;
-}
-
-
-.article-image img {
-  display: block;
-
-  width: auto !important;
-  height: auto !important;
-
-  max-width: 100% !important;
-  max-height: var(--article-image-max-height) !important;
-
-  margin: 0 auto;
-
-  object-fit: contain;
-
-  cursor: zoom-in;
-}
-
-
-.article-image-caption {
-  margin-top: 6px;
-
-  color: var(--article-image-caption-color);
-
-  font-size: var(--article-image-caption-size);
-  line-height: 1.5;
-
-  text-align: left;
 }
 
 
@@ -430,9 +380,7 @@
   position: relative;
 
   margin:
-    var(--gallery-margin-top)
-    0
-    var(--gallery-margin-bottom);
+    var(--gallery-margin-top) 0 var(--gallery-margin-bottom);
 }
 
 
@@ -574,8 +522,7 @@
 .article-body h3 code,
 .article-body h4 code {
   padding:
-    var(--inline-code-padding-vertical)
-    var(--inline-code-padding-horizontal);
+    var(--inline-code-padding-vertical) var(--inline-code-padding-horizontal);
 
   background: var(--color-code);
 
@@ -601,15 +548,10 @@
   position: relative;
 
   margin:
-    var(--code-margin-top)
-    0
-    var(--code-margin-bottom);
+    var(--code-margin-top) 0 var(--code-margin-bottom);
 
   padding:
-    var(--code-padding-top)
-    var(--code-padding-right)
-    var(--code-padding-bottom)
-    var(--code-padding-left);
+    var(--code-padding-top) var(--code-padding-right) var(--code-padding-bottom) var(--code-padding-left);
 
   background: var(--color-code) !important;
 
@@ -627,7 +569,7 @@
 }
 
 
-.article-body pre[class*="language-"] > code {
+.article-body pre[class*="language-"]>code {
   display: block;
 
   padding: 0 !important;
@@ -670,8 +612,7 @@
 
 .article-body .toolbar .toolbar-item button {
   padding:
-    var(--toolbar-button-padding-vertical)
-    var(--toolbar-button-padding-horizontal);
+    var(--toolbar-button-padding-vertical) var(--toolbar-button-padding-horizontal);
 
   border: 0;
 
@@ -698,22 +639,15 @@
 
 .notice {
   margin:
-    var(--notice-margin-top)
-    0
-    var(--notice-margin-bottom);
+    var(--notice-margin-top) 0 var(--notice-margin-bottom);
 
   padding:
-    var(--notice-padding-top)
-    var(--notice-padding-right)
-    var(--notice-padding-bottom)
-    var(--notice-padding-left);
+    var(--notice-padding-top) var(--notice-padding-right) var(--notice-padding-bottom) var(--notice-padding-left);
 
   border: 1px solid var(--color-border);
 
   border-left:
-    var(--notice-border-left-width)
-    solid
-    #3366cc;
+    var(--notice-border-left-width) solid #3366cc;
 
   background: var(--color-code);
 }
@@ -735,10 +669,7 @@
   width: var(--infobox-width);
 
   margin:
-    0
-    0
-    var(--infobox-margin-bottom)
-    var(--infobox-margin-left);
+    0 0 var(--infobox-margin-bottom) var(--infobox-margin-left);
 
   border: 1px solid var(--color-border);
 
