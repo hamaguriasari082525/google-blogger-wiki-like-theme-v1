@@ -1,40 +1,9 @@
 /* ==================================================
    WIKIPEDIA-LIKE TABLE
    ================================================== */
-
-.wikitable {
-  width: max-content;
-  max-width: 100%;
-
-  margin: 0.75em 0;
-
-  border-collapse: collapse;
-
-  background: var(--color-page);
-
-  font-size: var(--table-font-size);
-}
-
-.wikitable th,
-.wikitable td {
-  border: 1px solid var(--color-border);
-
-  padding:
-    calc(var(--table-cell-padding-vertical) + 2px) calc(var(--table-cell-padding-horizontal) + 2px);
-
-  text-align: left;
-  vertical-align: top;
-}
-
-.wikitable th {
-  background: var(--color-table-header);
-  font-weight: 600;
-}
-
-/* 
-.wikitable tr:nth-child(even) {
-  background: var(--color-table-alt);
-} */
+/* ==================================================
+   WIKIPEDIA-LIKE TABLE
+   ================================================== */
 
 .wikitable-scroll {
   width: 100%;
@@ -50,4 +19,44 @@
   box-sizing: border-box;
 
   -webkit-overflow-scrolling: touch;
+}
+
+
+.wikitable {
+  width: max-content;
+  min-width: 100%;
+
+  margin: 0;
+
+  border-collapse: collapse;
+
+  background: var(--color-page);
+
+  font-size: var(--table-font-size);
+}
+
+
+.wikitable th,
+.wikitable td {
+  padding:
+    calc(var(--table-cell-padding-vertical) + 2px)
+    calc(var(--table-cell-padding-horizontal) + 4px);
+
+  text-align: left;
+  vertical-align: top;
+
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+.wikitable th {
+  background: var(--color-code);
+
+  font-weight: 600;
+}
+
+
+.wikitable tr:last-child td {
+  border-bottom: none;
 }
