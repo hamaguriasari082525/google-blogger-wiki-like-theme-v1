@@ -33,8 +33,8 @@
       const number = getSectionNumber(target);
       if (!number) return;
 
-      updateTarget(target, number);
-      // updateReferences(target, number);
+      // updateTarget(target, number);
+      updateReferences(target, number);
     });
   }
 
