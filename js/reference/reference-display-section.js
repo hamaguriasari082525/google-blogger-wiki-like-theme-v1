@@ -34,7 +34,7 @@
       if (!number) return;
 
       updateTarget(target, number);
-      updateReferences(target, number);
+      // updateReferences(target, number);
     });
   }
 
