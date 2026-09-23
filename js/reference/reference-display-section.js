@@ -11,7 +11,8 @@
 
   function updateTarget(target, number) {
     const display = target.element.querySelector(":scope > .article-reference-display");
-    if (display) display.textContent = number;
+    // if (display) display.textContent = number;
+    if (display) display.textContent = "";
   }
 
   function updateReferences(target, number) {
@@ -33,7 +34,7 @@
       const number = getSectionNumber(target);
       if (!number) return;
 
-      // updateTarget(target, number);
+      updateTarget(target, number);
       updateReferences(target, number);
     });
   }
